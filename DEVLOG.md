@@ -7,6 +7,32 @@
 
 ---
 
+### [S007] — 2026-03-09 — Деплой лендинга на GitHub Pages
+
+**Роли:** #6 Arjun Mehta (исполнитель), #1 Marco Richter (контроль), #8 Sven Lindqvist (DEVLOG)
+**Статус:** завершено
+**ТЗ:** `docs/tz/TZ-007-deploy-netlify.md`
+
+**Что сделано:**
+- Создан GitHub-репозиторий: `aidancompton001/edmi-landing`
+- Весь проект закоммичен и запушен на GitHub (202 файла)
+- Сбилжен `apps/landing/` в production (Vite build, 9 файлов)
+- Настроен `base` path в vite.config.js для GitHub Pages
+- Создана ветка `gh-pages` с built-файлами
+- GitHub Pages включён, статус: built
+
+**Публичная ссылка:** https://aidancompton001.github.io/edmi-landing/
+
+**Страницы:**
+- Роутер: https://aidancompton001.github.io/edmi-landing/
+- Variant A (Glass Prism): https://aidancompton001.github.io/edmi-landing/variant-a.html
+- Variant B (Clean Surgical): https://aidancompton001.github.io/edmi-landing/variant-b.html
+- Variant C (Neon Depth): https://aidancompton001.github.io/edmi-landing/variant-c.html
+
+**Артефакты:** GitHub repo, gh-pages branch, `docs/tz/TZ-007-deploy-netlify.md`
+
+---
+
 ### [S006] — 2026-03-09 — Brainstorming лендинга + Landa Review + Plan
 
 **Роли:** #2 Elif Aydin (дизайн), #1 Marco Richter (стратегия), #14 Hans Landa (аудит), #8 Sven Lindqvist (DEVLOG)
