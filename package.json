@@ -1,0 +1,38 @@
+{
+  "name": "edmi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EDMI Microscope Store — Mobile App + Middleware + Admin Panel",
+  "scripts": {
+    "dev": "pnpm --parallel --filter './apps/*' --filter './packages/server' dev",
+    "dev:mobile": "pnpm --filter mobile dev",
+    "dev:server": "pnpm --filter @edmi/server dev",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:landing": "pnpm --filter landing dev",
+    "build": "pnpm --filter @edmi/shared build && pnpm --parallel --filter './apps/*' --filter './packages/server' build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "test:mobile": "pnpm --filter mobile test",
+    "test:server": "pnpm --filter @edmi/server test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean && rm -rf node_modules"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "prisma",
+      "esbuild"
+    ],
+    "overrides": {
+      "react-native-worklets": "0.5.1"
+    }
+  },
+  "devDependencies": {
+    "puppeteer": "^24.37.2"
+  }
+}

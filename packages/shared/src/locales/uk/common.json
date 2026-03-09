@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "EDMI",
+    "tagline": "Стоматологічні мікроскопи"
+  },
+  "navigation": {
+    "home": "Головна",
+    "catalog": "Каталог",
+    "configurator": "Конфігуратор",
+    "stock": "Наявність",
+    "cart": "Кошик",
+    "profile": "Профіль"
+  },
+  "home": {
+    "quickActions": {
+      "catalog": "Каталог",
+      "discounts": "Акції",
+      "notifications": "Сповіщення",
+      "orders": "Замовлення"
+    },
+    "recommendations": "Рекомендації",
+    "bestOffers": "Кращі пропозиції для вас",
+    "viewAll": "Дивитись все"
+  },
+  "actions": {
+    "buy": "Купити",
+    "addToCart": "В кошик",
+    "addToFavorites": "В обране",
+    "removeFromFavorites": "Видалити з обраного",
+    "viewDetails": "Детальніше",
+    "back": "Назад",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "save": "Зберегти",
+    "delete": "Видалити",
+    "retry": "Спробувати знову",
+    "close": "Закрити",
+    "search": "Пошук",
+    "filter": "Фільтр",
+    "sort": "Сортувати",
+    "clear": "Очистити",
+    "apply": "Застосувати",
+    "showMore": "Показати більше",
+    "showLess": "Показати менше"
+  },
+  "status": {
+    "loading": "Завантаження...",
+    "error": "Щось пішло не так",
+    "empty": "Нічого не знайдено",
+    "offline": "Немає з'єднання з інтернетом",
+    "success": "Успішно"
+  },
+  "auth": {
+    "login": "Увійти",
+    "register": "Зареєструватися",
+    "logout": "Вийти",
+    "email": "Email",
+    "password": "Пароль",
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "phone": "Телефон",
+    "forgotPassword": "Забули пароль?",
+    "noAccount": "Немає акаунту?",
+    "hasAccount": "Вже є акаунт?"
+  },
+  "language": {
+    "title": "Мова",
+    "uk": "Українська",
+    "en": "English"
+  },
+  "comingSoon": "Скоро",
+  "profile": {
+    "loginPrompt": "Увійдіть, щоб переглядати замовлення",
+    "orders": "Мої замовлення",
+    "guest": "Гість",
+    "wishlist": "Список бажань",
+    "contactManager": "Зв'язатися з менеджером",
+    "about": "Про додаток"
+  },
+  "currency": {
+    "eur": "EUR"
+  }
+}

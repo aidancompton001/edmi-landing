@@ -1,0 +1,49 @@
+{
+  "catalog": {
+    "title": "Catalog",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "results": "{{count}} products",
+    "noResults": "No products found",
+    "searchPlaceholder": "Search microscopes...",
+    "allBrands": "All brands"
+  },
+  "product": {
+    "description": "Description",
+    "specifications": "Specifications",
+    "price": "Price",
+    "oldPrice": "Old Price",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "onBackorder": "On Backorder",
+    "new": "New",
+    "used": "Used",
+    "sku": "SKU",
+    "brand": "Brand",
+    "quantity": "Quantity",
+    "delivery": "Delivery",
+    "payment": "Payment & Warranty",
+    "requestInvoice": "Request Invoice",
+    "relatedProducts": "You may also like"
+  },
+  "sort": {
+    "newest": "Newest",
+    "priceAsc": "Price: Low to High",
+    "priceDesc": "Price: High to Low",
+    "nameAsc": "Name: A-Z",
+    "nameDesc": "Name: Z-A",
+    "popular": "Popular"
+  },
+  "hero": {
+    "subtitle": "Dental microscopes and equipment"
+  },
+  "stock": {
+    "title": "Availability",
+    "available": "In Stock",
+    "unavailable": "Unavailable",
+    "backorder": "On Backorder",
+    "lastItems": "{{count}} left in stock",
+    "emptyTitle": "Products loading",
+    "emptyDescription": "Products with availability info will appear here"
+  }
+}

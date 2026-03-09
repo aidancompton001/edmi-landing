@@ -1,0 +1,98 @@
+{
+  "newMicroscopes": [
+    {
+      "id": 1,
+      "name": "Zeiss EXTARO 300",
+      "brand": "Carl Zeiss",
+      "category": "new",
+      "price": "from $25,000",
+      "image": "/images/zeiss-extaro-300.jpg",
+      "url": "https://edmi.com.ua/product/zeiss-extaro-300/",
+      "features": ["Fluorescence mode", "4K video", "Integrated documentation"],
+      "description": {
+        "uk": "Революційний стоматологічний мікроскоп з режимом флуоресценції для виявлення карієсу, тріщин та залишків матеріалів",
+        "en": "Revolutionary dental microscope with fluorescence mode for detecting caries, cracks and material residues"
+      }
+    },
+    {
+      "id": 2,
+      "name": "CJ-Optik Flexion",
+      "brand": "CJ-Optik",
+      "category": "new",
+      "price": "from $15,000",
+      "image": "/images/cj-optik-flexion.jpg",
+      "url": "https://edmi.com.ua/product/cj-optik-flexion/",
+      "features": ["LED illumination", "Ergonomic design", "Modular system"],
+      "description": {
+        "uk": "Ергономічний мікроскоп з модульною системою та LED-освітленням для комфортної роботи",
+        "en": "Ergonomic microscope with modular system and LED illumination for comfortable work"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Zeiss OPMI PROergo",
+      "brand": "Carl Zeiss",
+      "category": "new",
+      "price": "from $20,000",
+      "image": "/images/zeiss-opmi-proergo.jpg",
+      "url": "https://edmi.com.ua/product/zeiss-opmi-proergo/",
+      "features": ["Varioskop", "Auto-focus", "Magnetic clutch"],
+      "description": {
+        "uk": "Професійний мікроскоп з автофокусом та магнітним зчепленням для максимальної точності",
+        "en": "Professional microscope with auto-focus and magnetic clutch for maximum precision"
+      }
+    },
+    {
+      "id": 4,
+      "name": "CJ-Optik Advanced",
+      "brand": "CJ-Optik",
+      "category": "new",
+      "price": "from $18,000",
+      "image": "/images/cj-optik-advanced.jpg",
+      "url": "https://edmi.com.ua/product/cj-optik-advanced/",
+      "features": ["Full HD camera", "Xenon light", "Wall/ceiling mount"],
+      "description": {
+        "uk": "Просунутий мікроскоп з Full HD камерою та ксеноновим освітленням",
+        "en": "Advanced microscope with Full HD camera and xenon lighting"
+      }
+    }
+  ],
+  "accessoryCategories": [
+    {
+      "id": "optics",
+      "icon": "optics",
+      "url": "https://edmi.com.ua/product-category/optics/",
+      "name": { "uk": "Оптика та лінзи", "en": "Optics & Lenses" }
+    },
+    {
+      "id": "lighting",
+      "icon": "lighting",
+      "url": "https://edmi.com.ua/product-category/lighting/",
+      "name": { "uk": "Освітлення", "en": "Lighting" }
+    },
+    {
+      "id": "camera",
+      "icon": "camera",
+      "url": "https://edmi.com.ua/product-category/cameras/",
+      "name": { "uk": "Камери та відеосистеми", "en": "Cameras & Video Systems" }
+    },
+    {
+      "id": "mounts",
+      "icon": "mounts",
+      "url": "https://edmi.com.ua/product-category/mounts/",
+      "name": { "uk": "Кріплення та штативи", "en": "Mounts & Stands" }
+    },
+    {
+      "id": "covers",
+      "icon": "covers",
+      "url": "https://edmi.com.ua/product-category/covers/",
+      "name": { "uk": "Захисні чохли", "en": "Protective Covers" }
+    },
+    {
+      "id": "other",
+      "icon": "other",
+      "url": "https://edmi.com.ua/product-category/accessories/",
+      "name": { "uk": "Інше", "en": "Other" }
+    }
+  ]
+}

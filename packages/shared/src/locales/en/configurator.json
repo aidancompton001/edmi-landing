@@ -1,0 +1,69 @@
+{
+  "title": "Configurator",
+  "emptyTitle": "Configurator in development",
+  "emptyDescription": "Here you'll be able to build your perfect microscope",
+  "configurator": {
+    "title": "Configurator",
+    "subtitle": "Build Your Microscope",
+    "preview": "Preview",
+    "totalPrice": "Total Price",
+    "requestPrice": "Request Price",
+    "askEdmik": "Ask EDMik",
+    "viewInRoom": "View in Office",
+    "arComingSoon": "AR view — coming soon!",
+    "selectModel": "Select Model",
+    "basePrice": "Base Price",
+    "included": "Included",
+    "unavailable": "Unavailable",
+    "addToCart": "Add to Cart",
+    "resetOptions": "Reset",
+    "configAdded": "Configuration added to cart",
+    "ar": {
+      "title": "AR View",
+      "scanning": "Scanning surface...",
+      "scanHint": "Slowly move your phone to find a horizontal surface",
+      "tapToPlace": "Tap on a surface to place the microscope",
+      "placed": "Microscope placed!",
+      "interactionHint": "Drag to move, use two fingers to rotate and scale",
+      "screenshot": "Take Screenshot",
+      "reset": "Reset Position",
+      "close": "Close",
+      "unsupported": "Your device does not support AR",
+      "unsupportedMessage": "A device with ARKit (iOS) or ARCore (Android) is required",
+      "loading": "Loading 3D model..."
+    }
+  },
+  "options": {
+    "color": "Color",
+    "mount": "Mount",
+    "illumination": "Illumination",
+    "objective": "Objective",
+    "camera": "Camera"
+  },
+  "colors": {
+    "white": "White",
+    "black": "Black",
+    "silver": "Silver"
+  },
+  "mounts": {
+    "wall": "Wall Mount",
+    "ceiling": "Ceiling Mount",
+    "floor": "Floor Stand"
+  },
+  "illumination": {
+    "led": "LED",
+    "xenon": "Xenon",
+    "halogen": "Halogen"
+  },
+  "objectives": {
+    "f200": "f=200 mm",
+    "f250": "f=250 mm",
+    "f300": "f=300 mm",
+    "f400": "f=400 mm"
+  },
+  "camera": {
+    "none": "No Camera",
+    "fullHd": "Full HD",
+    "fourK": "4K UHD"
+  }
+}

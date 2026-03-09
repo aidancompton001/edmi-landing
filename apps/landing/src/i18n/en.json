@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "microscopes": "Microscopes",
+    "used": "Pre-Owned",
+    "accessories": "Accessories",
+    "service": "Service",
+    "contact": "Contact",
+    "edmitools": "EdmiTools"
+  },
+  "hero": {
+    "title": "Premium Dental Microscopes",
+    "subtitle": "Official distributor of Zeiss, CJ-Optik and other leading brands in Ukraine",
+    "cta": "Get a Consultation",
+    "cta2": "View Catalog"
+  },
+  "about": {
+    "title": "About EDMI",
+    "description": "We help dental clinics choose the best equipment. Over 4 years of experience, thousands of satisfied clients and reliable partnerships with leading manufacturers.",
+    "years": "years of experience",
+    "clients": "satisfied clients",
+    "partners": "official partners",
+    "yearsValue": "4+",
+    "clientsValue": "3500+",
+    "partnersValue": "15"
+  },
+  "newMicroscopes": {
+    "title": "New Microscopes",
+    "subtitle": "Premium equipment from leading manufacturers",
+    "viewAll": "View All",
+    "details": "Learn More",
+    "from": "from"
+  },
+  "usedMicroscopes": {
+    "title": "Pre-Owned Microscopes",
+    "subtitle": "Verified equipment with quality guarantee. Trade-in program — exchange your old microscope for a discount.",
+    "cta": "Learn about trade-in",
+    "tradeIn": "Trade-in Program",
+    "tradeInDesc": "Exchange your old microscope for a discount on a new one. We will evaluate your equipment and offer the best terms."
+  },
+  "accessories": {
+    "title": "Accessories",
+    "subtitle": "Everything you need for your microscope",
+    "viewCategory": "View",
+    "categories": {
+      "optics": "Optics & Lenses",
+      "lighting": "Lighting",
+      "camera": "Cameras & Video Systems",
+      "mounts": "Mounts & Stands",
+      "covers": "Protective Covers",
+      "other": "Other"
+    }
+  },
+  "service": {
+    "title": "Service & Maintenance",
+    "subtitle": "Professional service for your equipment",
+    "items": {
+      "diagnostics": "Diagnostics & Calibration",
+      "diagnosticsDesc": "Complete optical system diagnostics, calibration and microscope tuning",
+      "repair": "Repair & Restoration",
+      "repairDesc": "Repairs of any complexity using original spare parts",
+      "maintenance": "Technical Maintenance",
+      "maintenanceDesc": "Regular maintenance to extend the lifespan of your equipment",
+      "consulting": "Selection Consulting",
+      "consultingDesc": "We will help you choose a microscope for your tasks and budget"
+    }
+  },
+  "form": {
+    "title": "Contact Us",
+    "subtitle": "Leave a request and we will contact you within 30 minutes",
+    "name": "Your Name",
+    "phone": "Phone",
+    "message": "Message",
+    "messagePlaceholder": "Describe your question or leave a comment...",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Thank you! We will contact you shortly.",
+    "error": "Error. Please try again or call us."
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "address": "Kyiv, Ukraine",
+    "phone": "+380 (XX) XXX-XX-XX",
+    "email": "info@edmi.com.ua",
+    "followUs": "Follow Us"
+  },
+  "lang": {
+    "current": "EN",
+    "switch": "UA"
+  }
+}

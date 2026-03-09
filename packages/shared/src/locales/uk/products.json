@@ -1,0 +1,49 @@
+{
+  "catalog": {
+    "title": "Каталог",
+    "allProducts": "Всі товари",
+    "categories": "Категорії",
+    "results": "{{count}} товарів",
+    "noResults": "Товарів не знайдено",
+    "searchPlaceholder": "Пошук мікроскопів...",
+    "allBrands": "Всі бренди"
+  },
+  "product": {
+    "description": "Опис",
+    "specifications": "Характеристики",
+    "price": "Ціна",
+    "oldPrice": "Стара ціна",
+    "inStock": "В наявності",
+    "outOfStock": "Немає в наявності",
+    "onBackorder": "Під замовлення",
+    "new": "Нове",
+    "used": "Б/В",
+    "sku": "Артикул",
+    "brand": "Бренд",
+    "quantity": "Кількість",
+    "delivery": "Доставка",
+    "payment": "Оплата та гарантія",
+    "requestInvoice": "Запросити рахунок",
+    "relatedProducts": "Також може зацікавити"
+  },
+  "sort": {
+    "newest": "Новинки",
+    "priceAsc": "Ціна: від низької",
+    "priceDesc": "Ціна: від високої",
+    "nameAsc": "Назва: А-Я",
+    "nameDesc": "Назва: Я-А",
+    "popular": "Популярні"
+  },
+  "hero": {
+    "subtitle": "Стоматологічні мікроскопи та обладнання"
+  },
+  "stock": {
+    "title": "Наявність",
+    "available": "В наявності",
+    "unavailable": "Немає",
+    "backorder": "Під замовлення",
+    "lastItems": "Залишилось {{count}} шт.",
+    "emptyTitle": "Товари завантажуються",
+    "emptyDescription": "Тут з'являться товари з інформацією про наявність"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "EDMI",
+    "slug": "edmi",
+    "version": "0.1.0",
+    "scheme": "edmi",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ua.com.edmi.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "EDMI використовує камеру для AR-перегляду мікроскопа у вашому кабінеті"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#171717"
+      },
+      "package": "ua.com.edmi.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-localization",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

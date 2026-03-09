@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "EDMI",
+    "tagline": "Dental Microscopes"
+  },
+  "navigation": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "configurator": "Configurator",
+    "stock": "Availability",
+    "cart": "Cart",
+    "profile": "Profile"
+  },
+  "home": {
+    "quickActions": {
+      "catalog": "Catalog",
+      "discounts": "Discounts",
+      "notifications": "Notifications",
+      "orders": "Orders"
+    },
+    "recommendations": "Recommendations",
+    "bestOffers": "Best offers for you",
+    "viewAll": "View all"
+  },
+  "actions": {
+    "buy": "Buy",
+    "addToCart": "Add to Cart",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "viewDetails": "View Details",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "retry": "Try Again",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear",
+    "apply": "Apply",
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "empty": "Nothing found",
+    "offline": "No internet connection",
+    "success": "Success"
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "language": {
+    "title": "Language",
+    "uk": "Українська",
+    "en": "English"
+  },
+  "comingSoon": "Coming Soon",
+  "profile": {
+    "loginPrompt": "Log in to view your orders",
+    "orders": "My Orders",
+    "guest": "Guest",
+    "wishlist": "Wishlist",
+    "contactManager": "Contact Manager",
+    "about": "About App"
+  },
+  "currency": {
+    "eur": "EUR"
+  }
+}

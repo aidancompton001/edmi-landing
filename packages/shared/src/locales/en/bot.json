@@ -1,0 +1,25 @@
+{
+  "edmik": {
+    "name": "EDMik",
+    "greeting": "Hi! I'm EDMik — your personal assistant. How can I help?",
+    "placeholder": "Type a message...",
+    "voiceSoon": "Voice input — coming soon!",
+    "thinking": "Thinking..."
+  },
+  "quickActions": {
+    "reorder": "Reorder",
+    "orderStatus": "Order Status",
+    "contactManager": "Contact Manager",
+    "catalog": "Browse Catalog"
+  },
+  "responses": {
+    "reorderPrompt": "Your last order: {{product}} x {{quantity}}. Reorder?",
+    "reorderConfirm": "Reorder",
+    "reorderAdded": "Items added to cart!",
+    "noOrders": "You don't have any orders yet. Check out our catalog!",
+    "orderStatus": "Order #{{id}}: {{status}}",
+    "managerContact": "Contact our manager:\nPhone: +380 XX XXX XX XX\nEmail: info@edmi.com.ua",
+    "priceInquiry": "Check current prices in our catalog or ask a manager.",
+    "fallback": "I didn't quite understand that. Try selecting one of the quick actions or describe your question in more detail."
+  }
+}

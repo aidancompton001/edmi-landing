@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDMI — Прототипи лендингу</title>
+  <meta name="description" content="EDMI — 3 варианти дизайну лендинга для стоматологічних мікроскопів" />
+
+  <!-- Fonts: Unbounded (headings) + Montserrat (body) — per brandbook -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles.css" />
+  <style>
+    body {
+      background: #09090B;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .selector-title {
+      font-family: 'Unbounded', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .selector-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      color: #94A3B8;
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .variants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+      width: 100%;
+    }
+
+    .variant-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      text-decoration: none;
+      color: #E2E8F0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .variant-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, #90267C, #7938A9, #11387F);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .variant-card:hover::before {
+      opacity: 1;
+    }
+
+    .variant-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(144, 38, 124, 0.15);
+    }
+
+    .variant-letter {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #90267C, #7938A9, #11387F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .variant-name {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .variant-desc {
+      font-family: 'Montserrat', sans-serif;
+      color: #94A3B8;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .variant-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .tag-dark { background: rgba(144, 38, 124, 0.15); color: #D97ECA; }
+    .tag-light { background: rgba(17, 56, 127, 0.15); color: #7EB8F0; }
+    .tag-neon { background: rgba(121, 56, 169, 0.15); color: #B98EDB; }
+
+    .footer-note {
+      margin-top: 3rem;
+      color: #64748B;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .variant-card { transition: none; }
+      .variant-card::before { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="selector-title text-gradient">EDMI — Прототипи</h1>
+  <p class="selector-subtitle">Оберіть варіант дизайну для перегляду</p>
+
+  <div class="variants-grid">
+    <a href="/variant-a.html" class="variant-card">
+      <div class="variant-letter">A</div>
+      <div class="variant-name">Glass Prism</div>
+      <div class="variant-desc">Темна тема з ефектами glassmorphism. Скляні панелі, градієнтні свічення, преміальний вигляд.</div>
+      <span class="variant-tag tag-dark">Dark + Glass</span>
+    </a>
+
+    <a href="/variant-b.html" class="variant-card">
+      <div class="variant-letter">B</div>
+      <div class="variant-name">Clean Surgical</div>
+      <div class="variant-desc">Світла тема, хірургічна точність. Мінімалізм, білий простір, медична довіра.</div>
+      <span class="variant-tag tag-light">Light + Minimal</span>
+    </a>
+
+    <a href="/variant-c.html" class="variant-card">
+      <div class="variant-letter">C</div>
+      <div class="variant-name">Neon Depth</div>
+      <div class="variant-desc">Темна тема з неоновими акцентами. CSS-сітка, глибина, технологічність.</div>
+      <span class="variant-tag tag-neon">Dark + Neon</span>
+    </a>
+  </div>
+
+  <p class="footer-note">EDMI Landing Prototypes — CEO Review — 2026</p>
+</body>
+</html>

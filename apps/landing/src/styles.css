@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* EDMI Brand Design Tokens — synced with mobile app */
+@theme {
+  --color-primary: #90267C;
+  --color-accent: #11387F;
+  --color-gradient-start: #90267C;
+  --color-gradient-mid: #7938A9;
+  --color-gradient-end: #11387F;
+
+  --color-bg-dark: #171717;
+  --color-bg-light: #ffffff;
+  --color-bg-alt: #f2f1ef;
+
+  --color-surface-dark: rgba(255, 255, 255, 0.03);
+  --color-surface-light: rgba(0, 0, 0, 0.02);
+
+  --color-border-dark: rgba(255, 255, 255, 0.06);
+  --color-border-light: rgba(0, 0, 0, 0.08);
+
+  --color-text-primary-dark: #E2E8F0;
+  --color-text-primary-light: #1A202C;
+  --color-text-secondary-dark: #94A3B8;
+  --color-text-secondary-light: #64748B;
+
+  --color-success: #48BB78;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  --font-heading: 'Unbounded', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* Base resets */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Utility: EDMI gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-mid), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utility: EDMI gradient background */
+.bg-gradient-edmi {
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-mid), var(--color-gradient-end));
+}
+
+/* Utility: smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Toast notifications (shared across all variants) */
+.edmi-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.edmi-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.edmi-toast--success {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.edmi-toast--error {
+  background: var(--color-error);
+  color: #fff;
+}
+
+/* Accessibility: respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

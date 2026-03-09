@@ -1,0 +1,83 @@
+{
+  "cart": {
+    "title": "Cart",
+    "empty": "Cart is empty",
+    "emptyDescription": "Add products from the catalog",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "removeItem": "Remove",
+    "itemCount": "{{count}} items"
+  },
+  "contacts": {
+    "title": "Contact Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "email": "Email",
+    "phonePlaceholder": "+380XXXXXXXXX",
+    "emailPlaceholder": "email@example.com"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "step": "Step {{current}} of {{total}}",
+    "contacts": "Contacts",
+    "delivery": "Delivery",
+    "payment": "Payment",
+    "confirmation": "Confirmation",
+    "next": "Next",
+    "back": "Back",
+    "placeOrder": "Place Order",
+    "comment": "Comment",
+    "commentPlaceholder": "Add a comment to your order...",
+    "orderTotal": "Order Total",
+    "demoNote": "Demo mode — no payment will be charged"
+  },
+  "delivery": {
+    "title": "Delivery Method",
+    "novaPoshta": "Nova Poshta",
+    "pickup": "Pickup",
+    "city": "City",
+    "warehouse": "Warehouse",
+    "searchCity": "Enter city...",
+    "searchWarehouse": "Select warehouse...",
+    "pickupAddress": "Kyiv, Khreschatyk St., 22"
+  },
+  "payment": {
+    "title": "Payment Method",
+    "liqpay": "LiqPay",
+    "wayforpay": "WayForPay",
+    "selectMethod": "Select payment method"
+  },
+  "order": {
+    "title": "Order",
+    "number": "Order #{{id}}",
+    "status": "Status",
+    "track": "Track",
+    "reorder": "Reorder",
+    "history": "Order History",
+    "noOrders": "No orders yet",
+    "statusPending": "Pending",
+    "statusProcessing": "Processing",
+    "statusOnHold": "On Hold",
+    "statusCompleted": "Completed",
+    "statusCancelled": "Cancelled",
+    "statusRefunded": "Refunded",
+    "statusFailed": "Failed",
+    "items": "Items",
+    "deliveryInfo": "Delivery",
+    "paymentInfo": "Payment",
+    "date": "Date"
+  },
+  "success": {
+    "title": "Order placed!",
+    "description": "Your order #{{id}} has been received. We will contact you shortly.",
+    "trackOrder": "Track Order",
+    "continueShopping": "Continue Shopping"
+  },
+  "favorites": {
+    "title": "Wishlist",
+    "empty": "Wishlist is empty",
+    "emptyDescription": "Add products by tapping the heart icon"
+  }
+}

@@ -1,0 +1,273 @@
+/**
+ * WooCommerce Store API client.
+ *
+ * Uses the PUBLIC Store API (no auth required):
+ *   https://edmi.com.ua/wp-json/wc/store/v1/
+ *
+ * This lets us read products, categories, and images
+ * without WooCommerce Consumer Key / Secret.
+ */
+
+import type {
+  Product,
+  Category,
+  ProductImage,
+  ProductAttribute,
+  ProductStockStatus,
+} from '@edmi/shared';
+
+// --------------- WC Store API response types ---------------
+
+interface WCStorePrices {
+  price: string;
+  regular_price: string;
+  sale_price: string;
+  currency_code: string;
+  currency_minor_unit: number;
+}
+
+interface WCStoreImage {
+  id: number;
+  src: string;
+  thumbnail: string;
+  name: string;
+  alt: string;
+}
+
+interface WCStoreCategory {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+interface WCStoreAttributeTerm {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+interface WCStoreAttribute {
+  id: number;
+  name: string;
+  taxonomy: string;
+  has_variations: boolean;
+  terms: WCStoreAttributeTerm[];
+}
+
+interface WCStoreProduct {
+  id: number;
+  name: string;
+  slug: string;
+  permalink: string;
+  sku: string;
+  description: string;
+  short_description: string;
+  prices: WCStorePrices;
+  images: WCStoreImage[];
+  categories: WCStoreCategory[];
+  attributes: WCStoreAttribute[];
+  is_in_stock: boolean;
+  is_on_backorder: boolean;
+  average_rating: string;
+  review_count: number;
+  type: string;
+}
+
+interface WCStoreCategoryFull {
+  id: number;
+  name: string;
+  slug: string;
+  parent: number;
+  count: number;
+  image: { id: number; src: string; thumbnail: string; name: string; alt: string } | null;
+}
+
+// --------------- Config ---------------
+
+const WC_STORE_BASE =
+  (process.env['WC_URL'] || 'https://edmi.com.ua') + '/wp-json/wc/store/v1';
+
+// --------------- Price helpers ---------------
+
+function parsePrice(raw: string, minorUnit: number): number {
+  const cents = parseInt(raw, 10);
+  if (isNaN(cents)) return 0;
+  return cents / Math.pow(10, minorUnit);
+}
+
+// --------------- Mappers ---------------
+
+function mapStockStatus(inStock: boolean, onBackorder: boolean): ProductStockStatus {
+  if (inStock) return 'in_stock';
+  if (onBackorder) return 'on_backorder';
+  return 'out_of_stock';
+}
+
+function extractBrand(attrs: WCStoreAttribute[]): string {
+  const brandAttr = attrs.find(
+    (a) =>
+      a.name.toLowerCase() === 'brand' ||
+      a.name.toLowerCase() === 'бренд' ||
+      a.name.toLowerCase() === 'виробник',
+  );
+  return brandAttr?.terms[0]?.name ?? '';
+}
+
+function mapProduct(wc: WCStoreProduct): Product {
+  const minor = wc.prices.currency_minor_unit;
+  const price = parsePrice(wc.prices.price, minor);
+  const regularPrice = parsePrice(wc.prices.regular_price, minor);
+  const saleRaw = parsePrice(wc.prices.sale_price, minor);
+  const onSale = saleRaw > 0 && saleRaw < regularPrice;
+
+  return {
+    id: wc.id,
+    name: wc.name,
+    slug: wc.slug,
+    brand: extractBrand(wc.attributes),
+    description: wc.description,
+    shortDescription: wc.short_description,
+    sku: wc.sku,
+    price,
+    regularPrice,
+    salePrice: onSale ? saleRaw : null,
+    onSale,
+    currency: 'UAH',
+    stockQuantity: wc.is_in_stock ? 1 : 0,
+    stockStatus: mapStockStatus(wc.is_in_stock, wc.is_on_backorder),
+    condition: 'new',
+    categories: wc.categories.map((c) => ({
+      id: c.id,
+      name: c.name,
+      slug: c.slug,
+      parentId: null,
+      count: 0,
+      image: null,
+    })),
+    images: wc.images.map(
+      (img): ProductImage => ({
+        id: img.id,
+        src: img.src,
+        alt: img.alt || wc.name,
+      }),
+    ),
+    attributes: wc.attributes.map(
+      (a): ProductAttribute => ({
+        id: a.id,
+        name: a.name,
+        options: a.terms.map((t) => t.name),
+      }),
+    ),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+function mapCategory(wc: WCStoreCategoryFull): Category {
+  return {
+    id: wc.id,
+    name: wc.name,
+    slug: wc.slug,
+    parentId: wc.parent || null,
+    count: wc.count,
+    image: wc.image?.src ?? null,
+  };
+}
+
+// --------------- API calls ---------------
+
+interface FetchProductsParams {
+  page?: number;
+  perPage?: number;
+  search?: string;
+  category?: number;
+  orderby?: string;
+  order?: 'asc' | 'desc';
+}
+
+interface ProductsResult {
+  data: Product[];
+  pagination: {
+    page: number;
+    perPage: number;
+    total: number;
+    totalPages: number;
+  };
+}
+
+export async function fetchProducts(params: FetchProductsParams = {}): Promise<ProductsResult> {
+  const url = new URL(`${WC_STORE_BASE}/products`);
+  url.searchParams.set('page', String(params.page ?? 1));
+  url.searchParams.set('per_page', String(params.perPage ?? 20));
+  if (params.search) url.searchParams.set('search', params.search);
+  if (params.category) url.searchParams.set('category', String(params.category));
+  if (params.orderby) url.searchParams.set('orderby', params.orderby);
+  if (params.order) url.searchParams.set('order', params.order);
+
+  const res = await fetch(url.toString());
+
+  if (!res.ok) {
+    throw new Error(`WC Store API error: ${res.status} ${res.statusText}`);
+  }
+
+  const raw = (await res.json()) as WCStoreProduct[];
+  const total = parseInt(res.headers.get('X-WP-Total') ?? '0', 10);
+  const totalPages = parseInt(res.headers.get('X-WP-TotalPages') ?? '1', 10);
+
+  return {
+    data: raw.map(mapProduct),
+    pagination: {
+      page: params.page ?? 1,
+      perPage: params.perPage ?? 20,
+      total,
+      totalPages,
+    },
+  };
+}
+
+export async function fetchProductById(id: number): Promise<Product | null> {
+  const res = await fetch(`${WC_STORE_BASE}/products/${id}`);
+
+  if (res.status === 404) return null;
+
+  if (!res.ok) {
+    throw new Error(`WC Store API error: ${res.status} ${res.statusText}`);
+  }
+
+  const raw = (await res.json()) as WCStoreProduct;
+  return mapProduct(raw);
+}
+
+export async function fetchCategories(): Promise<Category[]> {
+  const res = await fetch(`${WC_STORE_BASE}/products/categories?per_page=100`);
+
+  if (!res.ok) {
+    throw new Error(`WC Store API error: ${res.status} ${res.statusText}`);
+  }
+
+  const raw = (await res.json()) as WCStoreCategoryFull[];
+  const categories = raw.map(mapCategory);
+
+  // Enrich categories that have no image with the first product image from that category
+  const needsImage = categories.filter((c) => !c.image);
+  if (needsImage.length > 0) {
+    try {
+      const productsRes = await fetch(`${WC_STORE_BASE}/products?per_page=100`);
+      if (productsRes.ok) {
+        const products = (await productsRes.json()) as WCStoreProduct[];
+        for (const cat of needsImage) {
+          const product = products.find(
+            (p) => p.categories?.some((c) => c.id === cat.id) && p.images?.length > 0,
+          );
+          if (product?.images[0]) {
+            cat.image = product.images[0].src ?? product.images[0].thumbnail ?? null;
+          }
+        }
+      }
+    } catch {
+      // Fallback: categories without images will use placeholder icons
+    }
+  }
+
+  return categories;
+}

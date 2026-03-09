@@ -1,0 +1,83 @@
+{
+  "cart": {
+    "title": "Кошик",
+    "empty": "Кошик порожній",
+    "emptyDescription": "Додайте товари з каталогу",
+    "total": "Разом",
+    "checkout": "Оформити замовлення",
+    "continueShopping": "Продовжити покупки",
+    "removeItem": "Видалити",
+    "itemCount": "{{count}} товарів"
+  },
+  "contacts": {
+    "title": "Контактні дані",
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "phone": "Телефон",
+    "email": "Email",
+    "phonePlaceholder": "+380XXXXXXXXX",
+    "emailPlaceholder": "email@example.com"
+  },
+  "checkout": {
+    "title": "Оформлення замовлення",
+    "step": "Крок {{current}} з {{total}}",
+    "contacts": "Контакти",
+    "delivery": "Доставка",
+    "payment": "Оплата",
+    "confirmation": "Підтвердження",
+    "next": "Далі",
+    "back": "Назад",
+    "placeOrder": "Замовити",
+    "comment": "Коментар",
+    "commentPlaceholder": "Додайте коментар до замовлення...",
+    "orderTotal": "Загальна сума",
+    "demoNote": "Демо-режим — оплата не буде стягнута"
+  },
+  "delivery": {
+    "title": "Спосіб доставки",
+    "novaPoshta": "Нова Пошта",
+    "pickup": "Самовивіз",
+    "city": "Місто",
+    "warehouse": "Відділення",
+    "searchCity": "Введіть місто...",
+    "searchWarehouse": "Виберіть відділення...",
+    "pickupAddress": "м. Київ, вул. Хрещатик, 22"
+  },
+  "payment": {
+    "title": "Спосіб оплати",
+    "liqpay": "LiqPay",
+    "wayforpay": "WayForPay",
+    "selectMethod": "Оберіть спосіб оплати"
+  },
+  "order": {
+    "title": "Замовлення",
+    "number": "Замовлення #{{id}}",
+    "status": "Статус",
+    "track": "Відстежити",
+    "reorder": "Замовити знову",
+    "history": "Історія замовлень",
+    "noOrders": "Замовлень поки немає",
+    "statusPending": "Очікує",
+    "statusProcessing": "В обробці",
+    "statusOnHold": "На утриманні",
+    "statusCompleted": "Виконано",
+    "statusCancelled": "Скасовано",
+    "statusRefunded": "Повернено",
+    "statusFailed": "Помилка",
+    "items": "Товари",
+    "deliveryInfo": "Доставка",
+    "paymentInfo": "Оплата",
+    "date": "Дата"
+  },
+  "success": {
+    "title": "Замовлення створено!",
+    "description": "Ваше замовлення #{{id}} прийнято. Ми зв'яжемося з вами найближчим часом.",
+    "trackOrder": "Відстежити замовлення",
+    "continueShopping": "Продовжити покупки"
+  },
+  "favorites": {
+    "title": "Список бажань",
+    "empty": "Список бажань порожній",
+    "emptyDescription": "Додавайте товари натисканням на серце"
+  }
+}
