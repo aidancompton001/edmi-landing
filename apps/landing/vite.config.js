@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES ? '/edmi-landing/' : '/',
   plugins: [tailwindcss()],
   server: {
     port: 5173,
