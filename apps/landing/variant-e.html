@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EDMI — стоматологічні мікроскопи преміум-класу. Нові та вживані мікроскопи Zeiss, CJ-Optik. Сервіс, аксесуари, консультації.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EDMI — Стоматологічні мікроскопи преміум-класу">
+  <meta property="og:description" content="Продаж, сервіс та trade-in стоматологічних мікроскопів від провідних брендів. Понад 4 роки на ринку.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://edmi.com.ua">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="EDMI">
+
+  <title>EDMI — Стоматологічні мікроскопи преміум-класу</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="/src/variant-e.css">
+</head>
+<body class="ve-body">
+
+  <!-- ========== HEADER ========== -->
+  <header class="ve-header" data-header>
+    <div class="ve-header__inner">
+      <a href="/" class="ve-header__logo" aria-label="EDMI — головна">
+        <span class="ve-header__logo-text">EDMI</span>
+      </a>
+
+      <nav class="ve-header__nav" aria-label="Основна навігація">
+        <a href="#microscopes" class="ve-header__nav-link" data-i18n="nav.microscopes">Мікроскопи</a>
+        <a href="#used" class="ve-header__nav-link" data-i18n="nav.used">Вживані</a>
+        <a href="#accessories" class="ve-header__nav-link" data-i18n="nav.accessories">Аксесуари</a>
+        <a href="#service" class="ve-header__nav-link" data-i18n="nav.service">Сервіс</a>
+        <a href="#contact" class="ve-header__nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="https://edmitools.com" class="ve-header__nav-link ve-header__nav-link--external" target="_blank" rel="noopener">EdmiTools</a>
+      </nav>
+
+      <div class="ve-header__actions">
+        <button class="ve-header__lang-toggle" data-lang-toggle aria-label="Змінити мову">
+          <span>UA</span>
+        </button>
+        <button class="ve-header__burger" data-menu-toggle aria-label="Відкрити меню" aria-expanded="false">
+          <span class="ve-header__burger-line"></span>
+          <span class="ve-header__burger-line"></span>
+          <span class="ve-header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="ve-mobile-menu hidden" data-mobile-menu aria-hidden="true">
+      <nav class="ve-mobile-menu__nav">
+        <a href="#microscopes" class="ve-mobile-menu__link" data-i18n="nav.microscopes">Мікроскопи</a>
+        <a href="#used" class="ve-mobile-menu__link" data-i18n="nav.used">Вживані</a>
+        <a href="#accessories" class="ve-mobile-menu__link" data-i18n="nav.accessories">Аксесуари</a>
+        <a href="#service" class="ve-mobile-menu__link" data-i18n="nav.service">Сервіс</a>
+        <a href="#contact" class="ve-mobile-menu__link" data-i18n="nav.contact">Контакти</a>
+        <a href="https://edmitools.com" class="ve-mobile-menu__link ve-mobile-menu__link--external" target="_blank" rel="noopener">EdmiTools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== STICKY CTA PILL ========== -->
+  <div class="ve-sticky-cta" id="stickyCta" aria-hidden="true">
+    <a href="#contact" class="ve-sticky-cta__btn" data-i18n="nav.contact">Консультація</a>
+  </div>
+
+  <main>
+
+    <!-- ========== HERO — FULL VIEWPORT IMMERSIVE ========== -->
+    <section class="ve-hero" id="hero">
+      <div class="ve-hero__mesh" aria-hidden="true"></div>
+
+      <div class="ve-hero__content scroll-animate">
+        <h1 class="ve-hero__title">
+          <span data-i18n="hero.title">Стоматологічні мікроскопи</span>
+          <br>
+          <span class="ve-hero__title-underline">преміум-класу</span>
+        </h1>
+        <p class="ve-hero__subtitle">
+          <span class="ve-hero__typewriter" data-i18n="hero.subtitle">Офіційний дистриб'ютор Zeiss та CJ-Optik в Україні. Продаж, сервіс, trade-in — все для точної стоматології.</span>
+        </p>
+        <div class="ve-hero__actions">
+          <a href="#contact" class="ve-btn ve-btn--primary ve-btn--lg" data-i18n="hero.cta_consult">Отримати консультацію</a>
+          <a href="#microscopes" class="ve-btn ve-btn--outline ve-btn--lg" data-i18n="hero.cta_catalog">Переглянути каталог</a>
+        </div>
+      </div>
+
+      <div class="ve-hero__scroll-indicator" aria-hidden="true">
+        <div class="ve-hero__scroll-line"></div>
+        <span class="ve-hero__scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== ABOUT — TIMELINE STORYTELLING ========== -->
+    <section class="ve-section ve-about" id="about">
+      <div class="ve-container">
+        <div class="ve-section__header scroll-animate">
+          <h2 class="ve-section__title" data-i18n="about.title">Чому <span class="ve-text-gradient">EDMI</span></h2>
+          <p class="ve-section__subtitle" data-i18n="about.subtitle">
+            Ми спеціалізуємося виключно на стоматологічній оптиці. Це дозволяє нам пропонувати найглибшу експертизу на ринку — від підбору моделі до повного сервісного супроводу.
+          </p>
+        </div>
+
+        <div class="ve-timeline">
+          <!-- Timeline line (rendered via CSS ::before) -->
+
+          <!-- Milestone 1 -->
+          <div class="ve-timeline__item scroll-animate">
+            <div class="ve-timeline__content ve-timeline__content--left">
+              <span class="ve-timeline__value" data-counter="4+">0</span>
+              <span class="ve-timeline__label" data-i18n="about.stat_years">років на ринку</span>
+              <p class="ve-timeline__desc">Побудували репутацію надійного партнера для сотень стоматологічних клінік по всій Україні.</p>
+            </div>
+            <div class="ve-timeline__dot"></div>
+            <div class="ve-timeline__spacer"></div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="ve-timeline__item scroll-animate">
+            <div class="ve-timeline__spacer"></div>
+            <div class="ve-timeline__dot"></div>
+            <div class="ve-timeline__content ve-timeline__content--right">
+              <span class="ve-timeline__value" data-counter="3500+">0</span>
+              <span class="ve-timeline__label" data-i18n="about.stat_clients">задоволених клієнтів</span>
+              <p class="ve-timeline__desc">Кожен клієнт отримує персональний підхід, навчання команди та повний сервісний супровід.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="ve-timeline__item scroll-animate">
+            <div class="ve-timeline__content ve-timeline__content--left">
+              <span class="ve-timeline__value" data-counter="15">0</span>
+              <span class="ve-timeline__label" data-i18n="about.stat_partners">офіційних партнерів</span>
+              <p class="ve-timeline__desc">Прямі контракти з провідними виробниками мікроскопів та оптичного обладнання.</p>
+            </div>
+            <div class="ve-timeline__dot"></div>
+            <div class="ve-timeline__spacer"></div>
+          </div>
+        </div>
+
+        <div class="ve-about__description scroll-animate">
+          <p data-i18n="about.description">
+            EDMI — це команда інженерів та стоматологів, об'єднаних спільною метою: зробити мікроскопну стоматологію доступною для кожної клініки в Україні. Ми не просто продаємо обладнання — ми допомагаємо обрати оптимальне рішення, навчаємо команду та забезпечуємо безперебійну роботу вашого мікроскопа роками.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== NEW MICROSCOPES — FULL-WIDTH CHAPTER CARDS ========== -->
+    <section class="ve-section ve-microscopes" id="microscopes">
+      <div class="ve-container">
+        <div class="ve-section__header scroll-animate">
+          <h2 class="ve-section__title" data-i18n="microscopes.title">Нові <span class="ve-text-gradient">мікроскопи</span></h2>
+          <p class="ve-section__subtitle" data-i18n="microscopes.subtitle">
+            Преміальна оптика від світових лідерів. Кожен мікроскоп — з офіційною гарантією та повним сервісним пакетом.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter Card 1: Zeiss EXTARO 300 -->
+      <div class="ve-chapter">
+        <div class="ve-container">
+          <article class="ve-chapter-card scroll-animate">
+            <div class="ve-chapter-card__text">
+              <span class="ve-chapter-card__brand">Zeiss</span>
+              <h3 class="ve-chapter-card__name" data-i18n="microscopes.product1_name">EXTARO 300</h3>
+              <span class="ve-chapter-card__badge" data-i18n="microscopes.badge_new">Новинка</span>
+              <ul class="ve-chapter-card__features">
+                <li data-i18n="microscopes.product1_feat1">Fluorescence mode</li>
+                <li data-i18n="microscopes.product1_feat2">Вбудована 4K-камера</li>
+                <li data-i18n="microscopes.product1_feat3">MORA interface</li>
+                <li data-i18n="microscopes.product1_feat4">Apochromatic оптика</li>
+              </ul>
+              <div class="ve-chapter-card__footer">
+                <span class="ve-chapter-card__price" data-i18n="microscopes.product1_price">від $45,000</span>
+                <a href="https://edmi.com.ua/product/zeiss-extaro-300/" target="_blank" rel="noopener" class="ve-btn ve-btn--outline ve-btn--sm" data-i18n="microscopes.details_btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ve-chapter-card__visual">
+              <div class="ve-chapter-card__image-placeholder">
+                <span>Zeiss EXTARO 300</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Thin gradient divider between products -->
+      <div class="ve-divider ve-divider--thin" aria-hidden="true"></div>
+
+      <!-- Chapter Card 2: CJ-Optik Flexion -->
+      <div class="ve-chapter">
+        <div class="ve-container">
+          <article class="ve-chapter-card ve-chapter-card--reversed scroll-animate">
+            <div class="ve-chapter-card__text">
+              <span class="ve-chapter-card__brand">CJ-Optik</span>
+              <h3 class="ve-chapter-card__name" data-i18n="microscopes.product2_name">Flexion</h3>
+              <ul class="ve-chapter-card__features">
+                <li data-i18n="microscopes.product2_feat1">Моторизований зум</li>
+                <li data-i18n="microscopes.product2_feat2">LED освітлення</li>
+                <li data-i18n="microscopes.product2_feat3">Ергономічний дизайн</li>
+                <li data-i18n="microscopes.product2_feat4">Full HD документація</li>
+              </ul>
+              <div class="ve-chapter-card__footer">
+                <span class="ve-chapter-card__price" data-i18n="microscopes.product2_price">від $28,000</span>
+                <a href="https://edmi.com.ua/product/cj-optik-flexion/" target="_blank" rel="noopener" class="ve-btn ve-btn--outline ve-btn--sm" data-i18n="microscopes.details_btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ve-chapter-card__visual">
+              <div class="ve-chapter-card__image-placeholder">
+                <span>CJ-Optik Flexion</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Thin gradient divider between products -->
+      <div class="ve-divider ve-divider--thin" aria-hidden="true"></div>
+
+      <!-- Chapter Card 3: Zeiss OPMI PROergo -->
+      <div class="ve-chapter">
+        <div class="ve-container">
+          <article class="ve-chapter-card scroll-animate">
+            <div class="ve-chapter-card__text">
+              <span class="ve-chapter-card__brand">Zeiss</span>
+              <h3 class="ve-chapter-card__name" data-i18n="microscopes.product3_name">OPMI PROergo</h3>
+              <ul class="ve-chapter-card__features">
+                <li data-i18n="microscopes.product3_feat1">Varioskop 200-400mm</li>
+                <li data-i18n="microscopes.product3_feat2">Мультидисциплінарний</li>
+                <li data-i18n="microscopes.product3_feat3">Магнітні бленди</li>
+                <li data-i18n="microscopes.product3_feat4">Інтегрований HD</li>
+              </ul>
+              <div class="ve-chapter-card__footer">
+                <span class="ve-chapter-card__price" data-i18n="microscopes.product3_price">від $38,000</span>
+                <a href="https://edmi.com.ua/product/zeiss-opmi-proergo/" target="_blank" rel="noopener" class="ve-btn ve-btn--outline ve-btn--sm" data-i18n="microscopes.details_btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ve-chapter-card__visual">
+              <div class="ve-chapter-card__image-placeholder">
+                <span>Zeiss OPMI PROergo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Thin gradient divider between products -->
+      <div class="ve-divider ve-divider--thin" aria-hidden="true"></div>
+
+      <!-- Chapter Card 4: CJ-Optik Advanced -->
+      <div class="ve-chapter">
+        <div class="ve-container">
+          <article class="ve-chapter-card ve-chapter-card--reversed scroll-animate">
+            <div class="ve-chapter-card__text">
+              <span class="ve-chapter-card__brand">CJ-Optik</span>
+              <h3 class="ve-chapter-card__name" data-i18n="microscopes.product4_name">Advanced</h3>
+              <ul class="ve-chapter-card__features">
+                <li data-i18n="microscopes.product4_feat1">6-ступеневий зум</li>
+                <li data-i18n="microscopes.product4_feat2">Широке поле зору</li>
+                <li data-i18n="microscopes.product4_feat3">Компактний корпус</li>
+                <li data-i18n="microscopes.product4_feat4">Стельове кріплення</li>
+              </ul>
+              <div class="ve-chapter-card__footer">
+                <span class="ve-chapter-card__price" data-i18n="microscopes.product4_price">від $22,000</span>
+                <a href="https://edmi.com.ua/product/cj-optik-advanced/" target="_blank" rel="noopener" class="ve-btn ve-btn--outline ve-btn--sm" data-i18n="microscopes.details_btn">Детальніше</a>
+              </div>
+            </div>
+            <div class="ve-chapter-card__visual">
+              <div class="ve-chapter-card__image-placeholder">
+                <span>CJ-Optik Advanced</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== USED MICROSCOPES — HIGHLIGHT CHAPTER ========== -->
+    <section class="ve-section ve-used" id="used">
+      <div class="ve-container">
+        <div class="ve-used__layout">
+          <div class="ve-used__hero scroll-animate">
+            <h2 class="ve-section__title" data-i18n="used.title">Вживані мікроскопи <span class="ve-text-gradient">та trade-in</span></h2>
+            <p class="ve-used__text" data-i18n="used.description">
+              Преміальна оптика не має бути недосяжною. Ми пропонуємо ретельно перевірені вживані мікроскопи з повною діагностикою, гарантією та сервісним обслуговуванням. Кожен апарат проходить 47-точковий контроль якості перед продажем.
+            </p>
+            <p class="ve-used__text" data-i18n="used.tradein_text">
+              Програма trade-in: здайте свій поточний мікроскоп та отримайте знижку до 30% на нову модель. Ми оцінимо ваше обладнання безкоштовно протягом 24 годин.
+            </p>
+          </div>
+
+          <div class="ve-used__card scroll-animate">
+            <div class="ve-used__card-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="23" stroke="url(#grad-used-e)" stroke-width="2"/>
+                <path d="M16 24l6 6 10-12" stroke="url(#grad-used-e)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs><linearGradient id="grad-used-e" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#90267C"/><stop offset="0.5" stop-color="#7938A9"/><stop offset="1" stop-color="#11387F"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ve-used__big-number">
+              <span data-counter="47">0</span>
+            </div>
+            <h3 class="ve-used__card-title" data-i18n="used.card_title">47-точковий контроль</h3>
+            <p class="ve-used__card-text" data-i18n="used.card_text">
+              Кожен вживаний мікроскоп проходить повну діагностику оптики, механіки, електроніки та освітлення. Ви отримуєте детальний звіт та гарантію від 6 місяців.
+            </p>
+            <a href="#contact" class="ve-btn ve-btn--primary" data-i18n="used.cta">Дізнатися про trade-in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== ACCESSORIES — ICON REVEAL ========== -->
+    <section class="ve-section ve-accessories" id="accessories">
+      <div class="ve-container">
+        <div class="ve-section__header scroll-animate">
+          <h2 class="ve-section__title"><span class="ve-text-gradient" data-i18n="accessories.title">Аксесуари</span> та комплектуючі</h2>
+          <p class="ve-section__subtitle" data-i18n="accessories.subtitle">
+            Оригінальні запчастини та аксесуари для вашого мікроскопа. Сумісність гарантовано.
+          </p>
+        </div>
+
+        <div class="ve-accessories__grid">
+          <a href="https://edmi.com.ua/product-category/optics/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#7938A9" stroke-width="1.5"/><circle cx="20" cy="20" r="7" stroke="#90267C" stroke-width="1.5"/><circle cx="20" cy="20" r="2" fill="#90267C"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_optics">Оптика</h3>
+          </a>
+
+          <a href="https://edmi.com.ua/product-category/lighting/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 6v4M20 30v4M6 20h4M30 20h4M10.3 10.3l2.8 2.8M26.9 26.9l2.8 2.8M10.3 29.7l2.8-2.8M26.9 13.1l2.8-2.8" stroke="#7938A9" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="6" stroke="#90267C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_lighting">Освітлення</h3>
+          </a>
+
+          <a href="https://edmi.com.ua/product-category/cameras/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="12" width="28" height="18" rx="3" stroke="#7938A9" stroke-width="1.5"/><circle cx="20" cy="21" r="5" stroke="#90267C" stroke-width="1.5"/><path d="M14 12l2-4h8l2 4" stroke="#7938A9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_cameras">Камери</h3>
+          </a>
+
+          <a href="https://edmi.com.ua/product-category/mounts/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M12 14h16M8 32h24" stroke="#7938A9" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="8" r="2" fill="#90267C"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_mounts">Кріплення</h3>
+          </a>
+
+          <a href="https://edmi.com.ua/product-category/covers/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M10 14c0-3.3 2.7-6 6-6h8c3.3 0 6 2.7 6 6v14c0 3.3-2.7 6-6 6H16c-3.3 0-6-2.7-6-6V14z" stroke="#7938A9" stroke-width="1.5"/><path d="M10 18h20" stroke="#90267C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_covers">Чохли</h3>
+          </a>
+
+          <a href="https://edmi.com.ua/product-category/other/" target="_blank" rel="noopener" class="ve-accessory-card scroll-animate">
+            <div class="ve-accessory-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="10" height="10" rx="2" stroke="#7938A9" stroke-width="1.5"/><rect x="22" y="8" width="10" height="10" rx="2" stroke="#90267C" stroke-width="1.5"/><rect x="8" y="22" width="10" height="10" rx="2" stroke="#90267C" stroke-width="1.5"/><rect x="22" y="22" width="10" height="10" rx="2" stroke="#7938A9" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="ve-accessory-card__title" data-i18n="accessories.cat_other">Інше</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== SERVICE — PROGRESS STEPS ========== -->
+    <section class="ve-section ve-service" id="service">
+      <div class="ve-container">
+        <div class="ve-section__header scroll-animate">
+          <h2 class="ve-section__title"><span class="ve-text-gradient" data-i18n="service.title">Сервіс</span> та підтримка</h2>
+          <p class="ve-section__subtitle" data-i18n="service.subtitle">
+            Повний цикл обслуговування: від першої діагностики до планового ТО. Сертифіковані інженери з досвідом роботи з Zeiss та CJ-Optik.
+          </p>
+        </div>
+
+        <div class="ve-steps">
+          <!-- Step 1 -->
+          <div class="ve-step scroll-animate">
+            <div class="ve-step__number">01</div>
+            <div class="ve-step__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="url(#grad-se1)" stroke-width="1.5"/><path d="M18 24h12M24 18v12" stroke="url(#grad-se1)" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="4" stroke="url(#grad-se1)" stroke-width="1.5"/><defs><linearGradient id="grad-se1" x1="6" y1="6" x2="42" y2="42"><stop stop-color="#90267C"/><stop offset="1" stop-color="#11387F"/></linearGradient></defs></svg>
+            </div>
+            <h3 class="ve-step__title" data-i18n="service.diag_title">Діагностика</h3>
+            <p class="ve-step__text" data-i18n="service.diag_text">
+              Комплексна перевірка оптичної системи, механізмів фокусування, освітлення та електроніки. Детальний звіт із рекомендаціями протягом 48 годин.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="ve-step scroll-animate">
+            <div class="ve-step__number">02</div>
+            <div class="ve-step__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M28 8l4 4-16 16-6 2 2-6L28 8z" stroke="url(#grad-se2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 36h24" stroke="url(#grad-se2)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="grad-se2" x1="6" y1="6" x2="42" y2="42"><stop stop-color="#90267C"/><stop offset="1" stop-color="#11387F"/></linearGradient></defs></svg>
+            </div>
+            <h3 class="ve-step__title" data-i18n="service.repair_title">Ремонт</h3>
+            <p class="ve-step__text" data-i18n="service.repair_text">
+              Відновлення працездатності будь-якого рівня складності. Оригінальні запчастини, калібрування оптики, заміна освітлювальних модулів.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="ve-step scroll-animate">
+            <div class="ve-step__number">03</div>
+            <div class="ve-step__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="22" rx="3" stroke="url(#grad-se3)" stroke-width="1.5"/><path d="M10 22h28" stroke="url(#grad-se3)" stroke-width="1.5"/><circle cx="16" cy="18" r="1.5" fill="#90267C"/><circle cx="22" cy="18" r="1.5" fill="#7938A9"/><circle cx="28" cy="18" r="1.5" fill="#11387F"/><path d="M18 30h12M22 26h4" stroke="url(#grad-se3)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="grad-se3" x1="6" y1="6" x2="42" y2="42"><stop stop-color="#90267C"/><stop offset="1" stop-color="#11387F"/></linearGradient></defs></svg>
+            </div>
+            <h3 class="ve-step__title" data-i18n="service.maintenance_title">Технічне обслуговування</h3>
+            <p class="ve-step__text" data-i18n="service.maintenance_text">
+              Планове ТО кожні 12 місяців для безперебійної роботи. Чистка оптики, змащення механізмів, перевірка кабелів, оновлення прошивки.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="ve-step scroll-animate">
+            <div class="ve-step__number">04</div>
+            <div class="ve-step__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 12c-6.6 0-12 5.4-12 12v8c0 2.2 1.8 4 4 4h2v-10h-2c-1.1 0-2 .9-2 2v2c0-5.5 4.5-10 10-10s10 4.5 10 10v-2c0-1.1-.9-2-2-2h-2v10h2c2.2 0 4-1.8 4-4v-8c0-6.6-5.4-12-12-12z" stroke="url(#grad-se4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="grad-se4" x1="6" y1="6" x2="42" y2="42"><stop stop-color="#90267C"/><stop offset="1" stop-color="#11387F"/></linearGradient></defs></svg>
+            </div>
+            <h3 class="ve-step__title" data-i18n="service.consult_title">Консультація</h3>
+            <p class="ve-step__text" data-i18n="service.consult_text">
+              Допоможемо обрати мікроскоп під ваші задачі та бюджет. Проведемо демонстрацію у вашій клініці. Навчимо команду роботі з обладнанням.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GRADIENT DIVIDER ========== -->
+    <div class="ve-divider" aria-hidden="true"></div>
+
+    <!-- ========== CONTACT FORM — DRAMATIC SPLIT ========== -->
+    <section class="ve-section ve-contact" id="contact">
+      <div class="ve-contact__accent-line" aria-hidden="true"></div>
+      <div class="ve-container">
+        <div class="ve-contact__layout">
+          <div class="ve-contact__info scroll-animate">
+            <h2 class="ve-section__title" data-i18n="contact.title">Зв'яжіться <span class="ve-text-gradient">з нами</span></h2>
+            <p class="ve-contact__text" data-i18n="contact.description">
+              Залиште заявку і наш спеціаліст зв'яжеться з вами протягом 2 годин у робочий час. Або зателефонуйте напряму — ми завжди на зв'язку.
+            </p>
+            <div class="ve-contact__details">
+              <div class="ve-contact__detail">
+                <span class="ve-contact__detail-label" data-i18n="contact.phone_label">Телефон</span>
+                <a href="tel:+380501234567" class="ve-contact__detail-value">+38 (050) 123-45-67</a>
+              </div>
+              <div class="ve-contact__detail">
+                <span class="ve-contact__detail-label" data-i18n="contact.email_label">Email</span>
+                <a href="mailto:info@edmi.com.ua" class="ve-contact__detail-value">info@edmi.com.ua</a>
+              </div>
+              <div class="ve-contact__detail">
+                <span class="ve-contact__detail-label" data-i18n="contact.address_label">Адреса</span>
+                <span class="ve-contact__detail-value" data-i18n="contact.address_value">м. Київ, вул. Хрещатик, 1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ve-contact__form-card scroll-animate">
+            <form class="ve-contact-form" data-contact-form novalidate>
+              <div class="ve-contact-form__group">
+                <label for="ve-contact-name" class="ve-contact-form__label" data-i18n="contact.name_label">Ваше ім'я</label>
+                <input
+                  type="text"
+                  id="ve-contact-name"
+                  name="name"
+                  class="ve-contact-form__input"
+                  required
+                  autocomplete="name"
+                  placeholder="Олександр Петренко"
+                  data-i18n="contact.name_placeholder"
+                >
+              </div>
+
+              <div class="ve-contact-form__group">
+                <label for="ve-contact-phone" class="ve-contact-form__label" data-i18n="contact.phone_label_form">Телефон</label>
+                <input
+                  type="tel"
+                  id="ve-contact-phone"
+                  name="phone"
+                  class="ve-contact-form__input"
+                  required
+                  autocomplete="tel"
+                  placeholder="+38 (0XX) XXX-XX-XX"
+                  data-i18n="contact.phone_placeholder"
+                >
+              </div>
+
+              <div class="ve-contact-form__group">
+                <label for="ve-contact-message" class="ve-contact-form__label" data-i18n="contact.message_label">Повідомлення</label>
+                <textarea
+                  id="ve-contact-message"
+                  name="message"
+                  class="ve-contact-form__input ve-contact-form__textarea"
+                  rows="4"
+                  placeholder="Розкажіть, що вас цікавить..."
+                  data-i18n="contact.message_placeholder"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="ve-btn ve-btn--primary ve-btn--lg ve-btn--full" data-i18n="contact.submit_btn">Надіслати заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ve-footer">
+    <div class="ve-footer__gradient-line" aria-hidden="true"></div>
+    <div class="ve-container">
+      <div class="ve-footer__grid">
+        <div class="ve-footer__brand">
+          <span class="ve-footer__logo">EDMI</span>
+          <p class="ve-footer__tagline" data-i18n="footer.tagline">Стоматологічні мікроскопи преміум-класу</p>
+        </div>
+
+        <div class="ve-footer__contacts">
+          <h4 class="ve-footer__heading" data-i18n="footer.contacts_heading">Контакти</h4>
+          <address class="ve-footer__address">
+            <p data-i18n="footer.address">м. Київ, вул. Хрещатик, 1</p>
+            <a href="tel:+380501234567">+38 (050) 123-45-67</a>
+            <a href="mailto:info@edmi.com.ua">info@edmi.com.ua</a>
+          </address>
+        </div>
+
+        <div class="ve-footer__links">
+          <h4 class="ve-footer__heading" data-i18n="footer.links_heading">Посилання</h4>
+          <nav class="ve-footer__nav" aria-label="Додаткова навігація">
+            <a href="https://edmi.com.ua" target="_blank" rel="noopener" data-i18n="footer.link_website">edmi.com.ua</a>
+            <a href="https://edmitools.com" target="_blank" rel="noopener">EdmiTools</a>
+            <a href="/privacy" data-i18n="footer.link_privacy">Політика конфіденційності</a>
+          </nav>
+        </div>
+
+        <div class="ve-footer__social">
+          <h4 class="ve-footer__heading" data-i18n="footer.social_heading">Соціальні мережі</h4>
+          <div class="ve-footer__social-links">
+            <a href="#" class="ve-footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="ve-footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" class="ve-footer__social-link" aria-label="Telegram" target="_blank" rel="noopener">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 3L10 14M21 3l-7 18-4-8-8-4 18-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ve-footer__bottom">
+        <p class="ve-footer__copyright" data-i18n="footer.copyright">&copy; 2026 EDMI. Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="edmi-toast" role="alert" aria-live="polite"></div>
+
+  <!-- Main script -->
+  <script type="module" src="/src/main.js"></script>
+
+  <!-- Sticky CTA logic (inline, minimal) -->
+  <script>
+    (function() {
+      var cta = document.getElementById('stickyCta');
+      if (!cta) return;
+      var shown = false;
+      window.addEventListener('scroll', function() {
+        var scrolled = window.scrollY > window.innerHeight * 1.2;
+        if (scrolled && !shown) {
+          cta.classList.add('ve-sticky-cta--visible');
+          cta.setAttribute('aria-hidden', 'false');
+          shown = true;
+        } else if (!scrolled && shown) {
+          cta.classList.remove('ve-sticky-cta--visible');
+          cta.setAttribute('aria-hidden', 'true');
+          shown = false;
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>

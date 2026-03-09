@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EDMI — Прототипи лендингу</title>
-  <meta name="description" content="EDMI — 3 варианти дизайну лендинга для стоматологічних мікроскопів" />
+  <meta name="description" content="EDMI — 7 варіантів дизайну лендинга для стоматологічних мікроскопів" />
 
   <!-- Fonts: Unbounded (headings) + Montserrat (body) — per brandbook -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,6 +121,39 @@
     .tag-dark { background: rgba(144, 38, 124, 0.15); color: #D97ECA; }
     .tag-light { background: rgba(17, 56, 127, 0.15); color: #7EB8F0; }
     .tag-neon { background: rgba(121, 56, 169, 0.15); color: #B98EDB; }
+    .tag-new { background: rgba(72, 187, 120, 0.15); color: #48BB78; }
+
+    .section-divider {
+      max-width: 960px;
+      width: 100%;
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    .section-divider__label {
+      font-family: 'Montserrat', sans-serif;
+      color: #64748B;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      position: relative;
+      display: inline-block;
+      padding: 0 1rem;
+    }
+
+    .section-divider__label::before,
+    .section-divider__label::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .section-divider__label::before { right: 100%; }
+    .section-divider__label::after { left: 100%; }
 
     .footer-note {
       margin-top: 3rem;
@@ -148,6 +181,13 @@
       <span class="variant-tag tag-dark">Dark + Glass</span>
     </a>
 
+    <a href="./variant-a-light.html" class="variant-card">
+      <div class="variant-letter">A<sup style="font-size:1.2rem">L</sup></div>
+      <div class="variant-name">Glass Prism Light</div>
+      <div class="variant-desc">Світла версія Glass Prism. Та сама структура і glass-ефекти, адаптовані під білий фон.</div>
+      <span class="variant-tag tag-new">Light + Glass</span>
+    </a>
+
     <a href="./variant-b.html" class="variant-card">
       <div class="variant-letter">B</div>
       <div class="variant-name">Clean Surgical</div>
@@ -160,6 +200,33 @@
       <div class="variant-name">Neon Depth</div>
       <div class="variant-desc">Темна тема з неоновими акцентами. CSS-сітка, глибина, технологічність.</div>
       <span class="variant-tag tag-neon">Dark + Neon</span>
+    </a>
+  </div>
+
+  <div class="section-divider">
+    <span class="section-divider__label">Trend-based 2026</span>
+  </div>
+
+  <div class="variants-grid">
+    <a href="./variant-d.html" class="variant-card">
+      <div class="variant-letter">D</div>
+      <div class="variant-name">Bento Grid</div>
+      <div class="variant-desc">Apple/Notion-стиль модульний лейаут. Бенто-сітка, м'які тіні, структурована інформаційна архітектура.</div>
+      <span class="variant-tag tag-new">Light + Bento</span>
+    </a>
+
+    <a href="./variant-e.html" class="variant-card">
+      <div class="variant-letter">E</div>
+      <div class="variant-name">Scroll Story</div>
+      <div class="variant-desc">Scroll-driven сторітелінг з паралакс-ефектами. Кінематичний досвід, наративний потік.</div>
+      <span class="variant-tag tag-new">Light + Parallax</span>
+    </a>
+
+    <a href="./variant-f.html" class="variant-card">
+      <div class="variant-letter">F</div>
+      <div class="variant-name">Light Glass</div>
+      <div class="variant-desc">Просунутий glassmorphism на світлому фоні. Mesh-градієнти, frost-ефекти, преміальна глибина.</div>
+      <span class="variant-tag tag-new">Light + Frost</span>
     </a>
   </div>
 

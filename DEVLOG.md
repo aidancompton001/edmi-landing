@@ -7,6 +7,167 @@
 
 ---
 
+### [S012] — 2026-03-09 — Увольнение #8 Sven Lindqvist + фикс карточек с фото
+
+**Роли:** #1 Viktor Schulz (координация после увольнения #8), #2 Elif Aydin (UX), #3 Tomasz Kowalski (вёрстка), #14 Hans Landa (аудит)
+**Статус:** в процессе
+
+**УВОЛЬНЕНИЕ:**
+- #8 Sven Lindqvist получил страйк 2/2 → УВОЛЕН без выплаты зарплаты
+- Причина: дважды задеплоил устаревший CSS на GitHub Pages (stash-процесс терял untracked файлы, деплоился старый код), не составил ТС на правки по фидбеку CEO, не подключил специалистов и Hans Landa
+- Замена: #8 Daniel Hartmann (бывший VP Engineering Delivery Hero, специализация — deploy excellence)
+
+**Фидбек CEO по карточкам:**
+- Проблема: карточки с фото микроскопов имели серый фон (#F5F5F7), а фото — на белом фоне. Видна граница, выглядит дёшево.
+- Эталон: карточка EXTARO 300 Premium — белый фон, фото сливается.
+- Hero карточка: микроскоп маленький, сбоку — выглядит плохо. Нужен grid-layout с нормальным размером.
+
+**Что исправлено (CSS):**
+- `.bento-card--hero-main`: `background: var(--vd-bg-alt)` → `background: #FFFFFF`, layout → grid 1.2fr+1fr
+- `.bento-card--about-image`: `background: transparent` → `background: #FFFFFF`
+- `.hero-product-img`: max-height 280px → 360px
+- Первый деплой: ПРОВАЛИЛСЯ (stash потерял файлы, деплоился старый CSS)
+- Второй деплой: ПРОВАЛИЛСЯ (та же причина — stash)
+- Третий деплой: УСПЕШЕН (копия dist в /tmp, верификация CSS в gh-pages перед пушем)
+
+**Артефакты:**
+- `apps/landing/src/variant-d.css` — hero-main и about-image фон белый
+- `TEAM.md` — увольнение #8 Sven, найм #8 Daniel Hartmann
+
+**Ожидает:**
+- Верификация CEO что изменения видны на проде
+- ТС на остальные правки карточек (hero layout, about image)
+
+> DEVLOG updated: S012
+
+---
+
+### [S011] — 2026-03-09 — TZ-009: Variant D — Светлая тема + акцентный градиент
+
+**Роли:** #2 Elif Aydin (дизайн), #3 Tomasz Kowalski (вёрстка), #8 Sven Lindqvist (DEVLOG, протокол), #14 Hans Landa (аудит)
+**Статус:** завершено
+
+**Контекст:**
+CEO уточнил дизайн-направление — "80% чёрного + немного фиолетового" относилось к СТИЛЮ ГРАДИЕНТОВ (как в брендбуке), а НЕ к цвету фона страницы. Страница должна быть светлой. Фиолетовый — только в акцентах.
+
+**Нарушение протокола:**
+- #8 Sven Lindqvist начал правки CSS без ТЗ и без Hans Landa — получил страйк 1/2
+- CEO: "Работа по протоколу! ТЗ → ответственные → скиллы → Hans Landa!"
+
+**Что сделано:**
+- Формализован TZ-009: откат CSS на светлую тему, градиент только в акцентах
+- Выбран Вариант A: полный откат hardcoded rgba + сохранение новых CSS-блоков
+- Исправлены все hardcoded dark rgba: header, borders, forms, scrollbar, mobile menu
+- Удалён hero-glow (не нужен на светлом фоне)
+- theme-color meta: #0A0A0F → #FFFFFF
+- Footer оставлен тёмным (#050508) для контраста
+- Акценты сохранены: gradient-text цены, gradient кнопки, hover-окантовки карточек
+- Build: OK (Vite, 23.2 KB variant-d CSS)
+- Верификация: 73/73 PASSED
+- Hans Landa (#14): PASS (0 критичных, 0 серьёзных)
+- Deploy: gh-pages pushed
+
+**Артефакты:**
+- `docs/tz/TZ-009-variant-d-light-theme-accent-gradient.md` — ТЗ
+- `apps/landing/src/variant-d.css` — CSS (светлая тема)
+- `apps/landing/variant-d.html` — theme-color, hero-glow removed
+
+> DEVLOG updated: S011
+
+---
+
+### [S010] — 2026-03-09 — Variant D Final: Dark Bento + реальный контент EDMI
+
+**Роли:** #2 Elif Aydin (дизайн), #3 Tomasz Kowalski (вёрстка), #14 Hans Landa (аудит), #8 Sven Lindqvist (контроль, DEVLOG)
+**Статус:** завершено
+**Дизайн-документ:** `docs/plans/2026-03-09-variant-d-final-dark-bento-design.md`
+
+**Что сделано:**
+- CEO выбрал Variant D (Bento Grid) как финальный дизайн лендинга
+- Полная переработка CSS в тёмную тему: #0A0A0F фон, фиолетовый ambient glow, белый текст
+- 13 hardcoded rgba-значений заменены с light → dark
+- Добавлены: hero-glow, hero-product-img, accessory-product карточки
+- HTML переписан с реальным контентом: 7 микроскопов (Zeiss, CJ-Optik) + 11 аксессуаров
+- 7 фото продуктов скачаны локально (не hotlink)
+- Реальные контакты: office@edmi.dental, +38 (067) 000-24-67, Івано-Франківськ
+- ЖЕЛЕЗНОЕ ПРАВИЛО: верификация через скрипт (73/73 проверок passed)
+- Cross-sum: микроскопы €205 144, аксессуары €16 641, итого €221 785
+- Hans Landa LANDA REPORT: 3 критичных (inline styles для responsive) + 9 серьёзных
+- Все критичные фиксы применены: inline styles → CSS, image duplication fix, i18n footer
+- Vite build успешный: 8 HTML + 8 CSS + 1 JS
+- Задеплоено на GitHub Pages (gh-pages branch push)
+
+**Публичная ссылка:** https://aidancompton001.github.io/edmi-landing/variant-d.html
+
+**Артефакты:** `variant-d.html`, `src/variant-d.css`, `public/images/products/` (7 файлов), `docs/plans/2026-03-09-variant-d-final-dark-bento-design.md`, `scripts/verify-variant-d-data.js`
+
+> DEVLOG updated: S010
+
+---
+
+### [S009] — 2026-03-09 — TZ-008: 4 новых светлых варианта лендинга + деплой
+
+**Роли:** #2 Elif Aydin (дизайн), #3 Tomasz Kowalski (вёрстка), #6 Arjun Mehta (деплой), #8 Sven Lindqvist (контроль, DEVLOG)
+**Статус:** завершено
+**ТЗ:** `docs/tz/TZ-008-variant-a-light-and-3-new-variants.md`
+
+**Что сделано:**
+- Variant A-Light (Glass Prism Light) — светлая адаптация Variant A: белый фон, light glassmorphism, тёмный текст, сохранена структура оригинала (514 строк HTML + 1377 строк CSS)
+- Variant D "Bento Grid" — Apple/Notion-стиль модульный лейаут с бенто-сіткою (696 строк HTML + 1644 строк CSS)
+- Variant E "Scroll Story" — scroll-driven сторітелінг с паралакс-ефектами, кінематичний досвід (612 строк HTML + 1658 строк CSS)
+- Variant F "Light Glass" — просунутий glassmorphism на світлому фоні, mesh-градієнти, frost-ефекти (545 строк HTML + 1842 строк CSS)
+- Роутер index.html оновлено: 7 варіантів у 2 секціях (оригінали + trend-based 2026)
+- vite.config.js оновлено: всі 7 варіантів у rollupOptions.input
+- Vite build успішний: 8 HTML + 9 CSS + 1 JS
+- Задеплоєно на GitHub Pages (gh-pages branch push)
+- Variant A (тёмный Glass Prism) — НЕ ЗМІНЕНИЙ
+
+**Дизайн-рішення (#2 Elif Aydin):**
+- Всі нові варіанти — СВІТЛІ (вказівка CEO)
+- Тренди 2026: Bento Grid (Apple/Notion), Scroll Storytelling (parallax), Light Glassmorphism (frosted)
+- Брендбук дотримано: Unbounded + Montserrat, градієнт #90267C → #7938A9 → #11387F
+- Кожен варіант має унікальний CSS namespace (--vd-*, --ve-*, --vf-*) для ізоляції стилів
+
+**Публічні посилання:**
+- Роутер: https://aidancompton001.github.io/edmi-landing/
+- A-Light: https://aidancompton001.github.io/edmi-landing/variant-a-light.html
+- D: https://aidancompton001.github.io/edmi-landing/variant-d.html
+- E: https://aidancompton001.github.io/edmi-landing/variant-e.html
+- F: https://aidancompton001.github.io/edmi-landing/variant-f.html
+
+**Артефакты:** `variant-a-light.html`, `variant-d.html`, `variant-e.html`, `variant-f.html`, `src/variant-a-light.css`, `src/variant-d.css`, `src/variant-e.css`, `src/variant-f.css`, оновлені `index.html`, `vite.config.js`
+
+> DEVLOG updated: S009
+
+---
+
+### [S008] — 2026-03-09 — Страйк 2/2 Marco Richter → увольнение → реорганизация команды
+
+**Роли:** #8 Sven Lindqvist (DEVLOG, принимает командование), CEO (решение)
+**Статус:** завершено
+
+**Что произошло:**
+- CEO поставил задачу TZ-008: создать светлый вариант A + исследовать тренды + 3 новых варианта (D, E, F)
+- Marco Richter (#1) начал выполнение без формального назначения ответственных, без оформления ТЗ по протоколу
+- CEO обнаружил нарушение: "Не определены ответственные, нет ТЗ сформированного"
+- Marco Richter получил страйк 2/2 → УВОЛЕН без выплаты зарплаты
+
+**Кадровые изменения:**
+- Marco Richter (#1) — уволен (страйк 2/2, повторное нарушение протокола)
+- Sven Lindqvist (#8) — повышен до ПРАВОЙ РУКИ CEO / Acting Lead + Chief of Staff
+- Viktor Schulz (#1 NEW) — нанят на позицию Product Architect, подчиняется #8
+
+**Действия по протоколу:**
+- TEAM.md обновлён до v3.0: увольнение записано, новый состав, новые роли
+- TZ-008 будет переформализован с чётким назначением ответственных
+- Все дальнейшие задачи — строго по протоколу под контролем #8 Sven Lindqvist
+
+**Указание CEO:** "Текущее задание сформировать правильно, согласно протоколу, подключить брейнштормы, скиллы, все правильно расписать, кто где ответственный"
+
+**Артефакты:** TEAM.md v3.0, реестр увольнений (#12), реестр страйков (#2)
+
+---
+
 ### [S007] — 2026-03-09 — Деплой лендинга на GitHub Pages
 
 **Роли:** #6 Arjun Mehta (исполнитель), #1 Marco Richter (контроль), #8 Sven Lindqvist (DEVLOG)

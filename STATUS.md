@@ -1,80 +1,73 @@
 # STATUS.md — EDMI
 
 **Обновлен:** 2026-03-09
-**Сессия:** S006 (3 прототипа лендинга — ГОТОВО)
+**Сессия:** S011 (TZ-009 — Variant D Light Theme + Accent Gradients)
 
 ## Текущий этап
 
-3 прототипа лендинга EDMI построены и работают на localhost:5173. Готовы к CEO review. Все протокольные задачи выполнены (страйк записан, Landa добавлен, DEVLOG, ТЗ-006).
+CEO уточнил дизайн-направление: Variant D должен быть СВЕТЛЫМ (белый фон, белые карточки). Фиолетовый градиент из брендбука — только в акцентах: цены, кнопки, hover-окантовки, бейджи. Тёмный градиент — только в hero-карточке и footer. Выполнен откат CSS с тёмной темы на светлую (TZ-009). Hans Landa (#14) PASS. Задеплоено на GitHub Pages.
 
-## Команда (v2.1 — из MONO + Hans Landa)
+## Команда (v3.0 — Sven Lindqvist Acting Lead)
 
-| # | Имя | Роль | Задача на лендинге |
-|---|-----|------|--------------------|
-| #1 | Marco Richter | Product Architect | Стратегия, контроль (СТРАЙК 1/2) |
-| #2 | Elif Aydin | UX/UI Engineer | Дизайн, 3 варианта |
-| #3 | Tomasz Kowalski | Frontend Engineer | Верстка, анимации |
-| #4 | Luca Moretti | Mobile Engineer | Standby (мобилка) |
-| #5 | Stefan Berger | Backend Engineer | API форм |
-| #6 | Arjun Mehta | SRE | Dev server, deploy |
-| #7 | Katarina Novak | QA Engineer | Тесты, Lighthouse |
-| #8 | Sven Lindqvist | Chief of Staff | Протокол, DEVLOG |
-| #14 | Hans Landa | Critical Reviewer | Аудит решений, LANDA REPORT |
+| # | Имя | Роль | Статус |
+|---|-----|------|--------|
+| #1 | Viktor Schulz (NEW) | Product Architect | Active |
+| #2 | Elif Aydin | UX/UI Engineer | Active |
+| #3 | Tomasz Kowalski | Frontend Engineer | Active |
+| #4 | Luca Moretti | Mobile Engineer | Standby |
+| #5 | Stefan Berger | Backend Engineer | Standby |
+| #6 | Arjun Mehta | SRE | Active |
+| #7 | Katarina Novak | QA Engineer | Active |
+| #8 | Sven Lindqvist | **ПРАВАЯ РУКА CEO** / Acting Lead + CoS | Active |
+| #14 | Hans Landa | Critical Reviewer | Active |
 
-## Последние выполненные задачи
+## Выполненные задачи
 
-- [x] Phase 0: Протокол — страйк Marco (#1), Hans Landa в TEAM.md, DEVLOG S006, TZ-006
-- [x] Phase 1: CSS-токены исправлены (Montserrat, 3-цветный градиент, primary #90267C)
-- [x] Phase 1: i18n (uk.json + en.json), products.json (4 микроскопа + 6 аксесуарных категорий)
-- [x] Phase 2: Common JS (language switcher, scroll animations, counters, form handler, smooth scroll)
-- [x] Phase 3: Variant A "Glass Prism" — 512 строк HTML + 28KB CSS (dark + glassmorphism)
-- [x] Phase 4: Variant B "Clean Surgical" — 408 строк HTML + 24KB CSS (light + minimal)
-- [x] Phase 5: Variant C "Neon Depth" — 431 строк HTML + 27KB CSS (dark + neon)
-- [x] Phase 6: Router page + dev server verification (HTTP 200 all pages)
-- [x] Phase 7: DEVLOG S006 updated, STATUS.md updated
+- [x] S006: 3 прототипа лендинга (A, B, C)
+- [x] S007: Деплой на GitHub Pages
+- [x] S008: Реорганизация команды, TZ-008 формализован
+- [x] S009: TZ-008 выполнен — A-Light, D, E, F созданы и задеплоены
+- [x] S010: Variant D Final — Dark Bento + реальный контент + деплой + i18n fix
+- [x] S011: TZ-009 — Variant D откат на светлую тему + акцентный градиент + деплой
 
-## Как посмотреть прототипы
+## Финальный лендинг
 
-```bash
-cd apps/landing && pnpm dev
-# Открыть http://localhost:5173
-# Выбрать вариант A, B или C
-```
+**Variant D (Light Bento Grid):** <https://aidancompton001.github.io/edmi-landing/variant-d.html>
 
-## Следующие задачи (приоритет)
+### Все варианты:
 
-1. [ ] CEO review: выбор варианта или комбинация
-2. [ ] Telegram Bot Token + Chat ID от CEO для формы
-3. [ ] EdmiTools URL от CEO
-4. [ ] Реальные фото микроскопов (сейчас placeholders)
-5. [ ] Favicon из брендбука
-6. [ ] Lighthouse аудит и оптимизация
-7. [ ] Cross-browser тестирование
+- **A** — Glass Prism (dark): <https://aidancompton001.github.io/edmi-landing/variant-a.html>
+- **A-Light** — Glass Prism Light: <https://aidancompton001.github.io/edmi-landing/variant-a-light.html>
+- **B** — Clean Surgical (light): <https://aidancompton001.github.io/edmi-landing/variant-b.html>
+- **C** — Neon Depth (dark): <https://aidancompton001.github.io/edmi-landing/variant-c.html>
+- **D** — **ФИНАЛЬНЫЙ** Light Bento Grid: <https://aidancompton001.github.io/edmi-landing/variant-d.html>
+- **E** — Scroll Story (light): <https://aidancompton001.github.io/edmi-landing/variant-e.html>
+- **F** — Light Glass (light): <https://aidancompton001.github.io/edmi-landing/variant-f.html>
 
 ## Блокеры / Проблемы
 
 - Telegram Bot Token / Chat ID для формы — CEO предоставит
 - EdmiTools URL — placeholder `https://edmitools.com`
-- Фото микроскопов — нужны реальные изображения
+- Гарантия trade-in: в HTML "до 12 місяців", в дизайн-доке "від 6 місяців" — уточнить у CEO
 
-## Ключевые решения (текущие)
+## Ключевые решения
 
 - Landing как отдельное приложение в монорепо (`apps/landing/`)
 - Vite 6 + TailwindCSS 4 + vanilla JS (без фреймворка)
-- 3 варианта: Glass Prism (A), Clean Surgical (B), Neon Depth (C)
-- Брендбук: Unbounded + Montserrat, градиент #90267C -> #7938A9 -> #11387F
+- **Variant D выбран CEO как финальный** — СВЕТЛАЯ тема, Bento Grid
+- Цветовая схема: #FFFFFF (фон), #1D1D1F (текст), #90267C (акценты), gradient в ценах/кнопках/hover
+- Footer: тёмный (#050508) для контраста
+- 7 фото продуктов скачаны локально (не hotlink с edmi.com.ua)
+- Брендбук: Unbounded + Montserrat, градиент #90267C → #7938A9 → #11387F
 - Hans Landa (#14) — обязательный аудит перед демонстрацией CEO
+- ЖЕЛЕЗНОЕ ПРАВИЛО соблюдено: все числа верифицированы скриптом (73/73)
 
-## Рабочие файлы (последние измененные)
+## Рабочие файлы
 
-- `apps/landing/variant-a.html` — Glass Prism (33KB)
-- `apps/landing/variant-b.html` — Clean Surgical (29KB)
-- `apps/landing/variant-c.html` — Neon Depth (24KB)
-- `apps/landing/index.html` — Router page (5KB)
-- `apps/landing/src/styles.css` — Общие токены (исправлено по брендбуку)
-- `apps/landing/src/main.js` — Common JS (200+ строк)
-- `apps/landing/src/i18n/` — uk.json + en.json
-- `apps/landing/src/data/products.json` — Данные товаров
-- `TEAM.md` v2.1 — Hans Landa, страйк Marco
-- `DEVLOG.md` — S001-S006
-- `docs/tz/TZ-006-landing-prototypes.md` — ТЗ с чек-листом
+- `apps/landing/variant-d.html` — **ФИНАЛЬНЫЙ** Light Bento Grid (~730 строк)
+- `apps/landing/src/variant-d.css` — CSS светлая тема + акцентный градиент (~1742 строк)
+- `apps/landing/public/images/products/` — 7 локальных фото продуктов
+- `docs/tz/TZ-009-variant-d-light-theme-accent-gradient.md` — ТЗ на светлую тему
+- `scripts/verify-variant-d-data.js` — Скрипт верификации данных
+- `apps/landing/index.html` — Router (7 вариантов)
+- `apps/landing/vite.config.js` — Все варианты в rollupOptions

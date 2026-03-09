@@ -16,8 +16,12 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         'variant-a': resolve(__dirname, 'variant-a.html'),
+        'variant-a-light': resolve(__dirname, 'variant-a-light.html'),
         'variant-b': resolve(__dirname, 'variant-b.html'),
         'variant-c': resolve(__dirname, 'variant-c.html'),
+        'variant-d': resolve(__dirname, 'variant-d.html'),
+        'variant-e': resolve(__dirname, 'variant-e.html'),
+        'variant-f': resolve(__dirname, 'variant-f.html'),
       },
     },
   },

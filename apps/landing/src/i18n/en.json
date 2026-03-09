@@ -80,9 +80,13 @@
   "footer": {
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
-    "address": "Kyiv, Ukraine",
-    "phone": "+380 (XX) XXX-XX-XX",
-    "email": "info@edmi.com.ua",
+    "address": "Ivano-Frankivsk, 229 Yevhena Konovaltsya St, Arkan Industrial Park",
+    "phone": "+38 (067) 000-24-67",
+    "email": "office@edmi.dental",
+    "schedule": "Mon-Fri 9:00-17:00, Sat 10:00-13:00",
+    "tagline": "Premium dental microscopes",
+    "contacts": "Contacts",
+    "navigation": "Navigation",
     "followUs": "Follow Us"
   },
   "lang": {
