@@ -229,7 +229,7 @@ const PRODUCTS = {
     brand: 'Zeiss',
     price: 'від €31,737',
     image: '/images/products/extaro-300-premium.png',
-    url: 'https://edmi.com.ua/product/zeiss-extaro-300/',
+    url: 'https://edmi.com.ua/product/zeiss-extaro-300-essential-package/',
     description: 'Революційний стоматологічний мікроскоп з інтегрованою технологією флуоресценції. EXTARO 300 дозволяє візуалізувати каріозні ураження, тріщини та композитні реставрації у різних режимах освітлення. Apochromatic оптика забезпечує кристальну чіткість зображення без хроматичних аберацій. Вбудована 4K-камера для документації та навчання.',
     features: ['Fluorescence mode (5 режимів)', 'Вбудована 4K-камера', 'MORA interface для гнучкого позиціонування', 'Apochromatic оптика Carl Zeiss']
   },
@@ -238,17 +238,17 @@ const PRODUCTS = {
     brand: 'CJ-Optik',
     price: 'від €25,000',
     image: '/images/products/cj-optik-flexion-twin.jpg',
-    url: 'https://edmi.com.ua/product/cj-optik-flexion/',
+    url: 'https://edmi.com.ua/product/cj-optik-flexion-twin/',
     description: 'Преміальний мікроскоп від німецького виробника CJ-Optik з моторизованим зумом та LED-освітленням нового покоління. Ергономічна конструкція Flexion забезпечує максимальний комфорт лікаря під час тривалих процедур. Full HD система документації дозволяє записувати відео та фото безпосередньо під час роботи.',
     features: ['Моторизований зум', 'LED освітлення нового покоління', 'Ергономічний дизайн Flexion', 'Full HD документація']
   },
   'proergo': {
-    name: 'Zeiss EXTARO 300 MORA',
+    name: 'Zeiss EXTARO 300 Classic+',
     brand: 'Zeiss',
     price: 'від €39,643',
     image: '/images/products/extaro-300-mora.png',
-    url: 'https://edmi.com.ua/product/zeiss-opmi-proergo/',
-    description: 'Комплектація EXTARO 300 з інтерфейсом MORA для мультидисциплінарного використання. Varioskop 200-400mm забезпечує оптимальну робочу відстань для різних спеціалізацій. Магнітні бленди дозволяють швидко змінювати конфігурацію оптики. Інтегрована HD-система для документації та телемедицини.',
+    url: 'https://edmi.com.ua/product/zeiss-extaro-300-classic-package/',
+    description: 'Комплектація EXTARO 300 Classic+ з розширеним набором функцій для мультидисциплінарного використання. Varioskop 200-400mm забезпечує оптимальну робочу відстань для різних спеціалізацій. Магнітні бленди дозволяють швидко змінювати конфігурацію оптики. Інтегрована HD-система для документації та телемедицини.',
     features: ['Varioskop 200-400mm', 'Мультидисциплінарний (ендодонтія, хірургія, протезування)', 'Магнітні бленди для швидкої зміни конфігурації', 'Інтегрований HD запис']
   },
   'advanced': {
@@ -256,7 +256,7 @@ const PRODUCTS = {
     brand: 'CJ-Optik',
     price: 'від €19,200',
     image: '/images/products/cj-optik-flexion-advanced.jpg',
-    url: 'https://edmi.com.ua/product/cj-optik-advanced/',
+    url: 'https://edmi.com.ua/product/3578/',
     description: 'Компактний та потужний мікроскоп для клінік, що шукають оптимальне співвідношення ціни та якості. 6-ступеневий зум та широке поле зору забезпечують чітку візуалізацію на всіх етапах лікування. Стельове кріплення звільняє робочий простір. Ідеальний вибір для першого мікроскопа в клініці.',
     features: ['6-ступеневий зум', 'Широке поле зору', 'Компактний корпус', 'Стельове або настінне кріплення']
   }
