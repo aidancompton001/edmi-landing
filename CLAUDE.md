@@ -59,16 +59,19 @@
 
 | Файл | Назначение | Когда читать |
 |------|-----------|--------------|
-| `CLAUDE.md` | Главный управляющий документ. Правила работы, процессы, команда, политики | Всегда. Загружается автоматически |
-| `TEAM.md` | Описание команды: 8 специалистов, их роли, инструменты | При запуске любого агента — для выбора роли |
-| `DEVLOG.md` | Журнал разработки: хронология сессий, решения, артефакты | При старте сессии — для контекста. При завершении — для записи |
-| `STATUS.md` | Текущее состояние проекта: что сделано, что следующее, блокеры | При старте сессии — для подхвата контекста. При завершении — обновить |
-| `METRICS.md` | Количественные метрики агента: подзадачи, файлы, откаты, бюджет | При завершении сессии — дописать метрики |
-| `docs/DESIGN_SYSTEM.md` | Цвета, шрифты, компоненты, анимации | При работе с UI |
-| `docs/ARCHITECTURE.md` | Системная архитектура, data flows | При архитектурных решениях |
-| `docs/TECH_STACK.md` | Библиотеки с версиями | При добавлении зависимостей |
-| `docs/API_CONTRACTS.md` | Все API endpoints с форматами | При работе с API |
+| `CLAUDE.md` | Главный управляющий документ | Всегда (загружается автоматически) |
+| `TEAM.md` | Команда: роли, страйки, увольнения | При запуске любого агента |
+| `DEVLOG.md` | Журнал разработки | Старт/завершение сессии |
+| `STATUS.md` | Текущее состояние (snapshot) | Старт сессии |
+| `docs/METRICS.md` | Метрики агента: подзадачи, файлы, откаты | Завершение сессии |
+| `docs/CEO_PROMPTS.md` | Набор промптов CEO для задач (P1-P10) | CEO вставляет в задачу |
+| `docs/specs/DESIGN_SYSTEM.md` | Цвета, шрифты, компоненты, анимации | При работе с UI |
+| `docs/specs/ARCHITECTURE.md` | Системная архитектура, data flows | При архитектурных решениях |
+| `docs/specs/TECH_STACK.md` | Библиотеки с версиями | При добавлении зависимостей |
+| `docs/specs/API_CONTRACTS.md` | Все API endpoints с форматами | При работе с API |
 | `docs/PHASES.md` | Фазы реализации + milestones | При планировании |
+| `docs/assets/brandbook/` | Брендбук EDMI (PDF) | При работе с дизайном |
+| `docs/assets/ref/` | UX-референсы (скриншоты Rozetka) | При дизайне мобильного UI |
 
 ---
 
@@ -109,22 +112,29 @@
 ```
 edmi/
 ├── CLAUDE.md                        # Главный управляющий документ
-├── TEAM.md                          # Команда (8 специалистов)
+├── TEAM.md                          # Команда (роли, страйки)
 ├── DEVLOG.md                        # Журнал разработки
 ├── STATUS.md                        # Текущее состояние (snapshot)
-├── METRICS.md                       # Метрики агента (append-only)
 ├── memory/
 │   └── MEMORY.md                    # Кросс-сессионные факты (Claude Code автозагружает)
 │
 ├── docs/                            # Project documentation
-│   ├── DESIGN_SYSTEM.md             # Colors, fonts, components, animations
-│   ├── ARCHITECTURE.md              # System architecture, data flows
-│   ├── TECH_STACK.md                # Verified libraries with versions
-│   ├── API_CONTRACTS.md             # All API endpoints with formats
-│   ├── PHASES.md                    # Implementation phases + visibility milestones
-│   ├── FOLDER_STRUCTURE.md          # Complete folder hierarchy
-│   └── adr/                         # Architecture Decision Records
-│       └── ADR-001-woocommerce-source-of-truth.md
+│   ├── PHASES.md                    # Фазы реализации + milestones
+│   ├── METRICS.md                   # Метрики агента
+│   ├── CEO_PROMPTS.md               # Промпты CEO (P1-P10)
+│   ├── specs/                       # Технические спецификации
+│   │   ├── API_CONTRACTS.md
+│   │   ├── ARCHITECTURE.md
+│   │   ├── TECH_STACK.md
+│   │   └── DESIGN_SYSTEM.md
+│   ├── tz/                          # Технические задания
+│   ├── plans/                       # Планы дизайна
+│   ├── adr/                         # Architecture Decision Records
+│   │   └── ADR-001-woocommerce-source-of-truth.md
+│   └── assets/                      # Бинарные файлы
+│       ├── ref/                     # UX-референсы (скриншоты Rozetka)
+│       ├── brandbook/               # Брендбук EDMI (PDF)
+│       └── presentation/            # Презентации (PDF/HTML, 4 языка)
 │
 ├── apps/
 │   ├── mobile/                      # React Native (Expo SDK 54+)
@@ -768,7 +778,7 @@ CEO не обязан знать команды и скиллы. **#1 Product Ar
 
 ### Agent Metrics
 
-В конце каждой сессии агент дописывает в `METRICS.md`:
+В конце каждой сессии агент дописывает в `docs/METRICS.md`:
 - Подзадач закрыто, файлов создано/изменено, откатов, бюджет превышен (задач)
 - Chaos-тестов написано, ADR создано, контрактов создано
 

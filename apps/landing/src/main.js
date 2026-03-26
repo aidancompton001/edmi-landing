@@ -222,6 +222,162 @@ function initHeaderScroll() {
   }, { passive: true });
 }
 
+// ─── Product Data (for Lightbox) ─────────────────────────────────────
+const PRODUCTS = {
+  'extaro-300': {
+    name: 'Zeiss EXTARO 300',
+    brand: 'Zeiss',
+    price: 'від €31,737',
+    image: '/images/products/extaro-300-premium.png',
+    url: 'https://edmi.com.ua/product/zeiss-extaro-300/',
+    description: 'Революційний стоматологічний мікроскоп з інтегрованою технологією флуоресценції. EXTARO 300 дозволяє візуалізувати каріозні ураження, тріщини та композитні реставрації у різних режимах освітлення. Apochromatic оптика забезпечує кристальну чіткість зображення без хроматичних аберацій. Вбудована 4K-камера для документації та навчання.',
+    features: ['Fluorescence mode (5 режимів)', 'Вбудована 4K-камера', 'MORA interface для гнучкого позиціонування', 'Apochromatic оптика Carl Zeiss']
+  },
+  'flexion': {
+    name: 'CJ-Optik Flexion TWIN',
+    brand: 'CJ-Optik',
+    price: 'від €25,000',
+    image: '/images/products/cj-optik-flexion-twin.jpg',
+    url: 'https://edmi.com.ua/product/cj-optik-flexion/',
+    description: 'Преміальний мікроскоп від німецького виробника CJ-Optik з моторизованим зумом та LED-освітленням нового покоління. Ергономічна конструкція Flexion забезпечує максимальний комфорт лікаря під час тривалих процедур. Full HD система документації дозволяє записувати відео та фото безпосередньо під час роботи.',
+    features: ['Моторизований зум', 'LED освітлення нового покоління', 'Ергономічний дизайн Flexion', 'Full HD документація']
+  },
+  'proergo': {
+    name: 'Zeiss EXTARO 300 MORA',
+    brand: 'Zeiss',
+    price: 'від €39,643',
+    image: '/images/products/extaro-300-mora.png',
+    url: 'https://edmi.com.ua/product/zeiss-opmi-proergo/',
+    description: 'Комплектація EXTARO 300 з інтерфейсом MORA для мультидисциплінарного використання. Varioskop 200-400mm забезпечує оптимальну робочу відстань для різних спеціалізацій. Магнітні бленди дозволяють швидко змінювати конфігурацію оптики. Інтегрована HD-система для документації та телемедицини.',
+    features: ['Varioskop 200-400mm', 'Мультидисциплінарний (ендодонтія, хірургія, протезування)', 'Магнітні бленди для швидкої зміни конфігурації', 'Інтегрований HD запис']
+  },
+  'advanced': {
+    name: 'CJ-Optik Flexion Advanced',
+    brand: 'CJ-Optik',
+    price: 'від €19,200',
+    image: '/images/products/cj-optik-flexion-advanced.jpg',
+    url: 'https://edmi.com.ua/product/cj-optik-advanced/',
+    description: 'Компактний та потужний мікроскоп для клінік, що шукають оптимальне співвідношення ціни та якості. 6-ступеневий зум та широке поле зору забезпечують чітку візуалізацію на всіх етапах лікування. Стельове кріплення звільняє робочий простір. Ідеальний вибір для першого мікроскопа в клініці.',
+    features: ['6-ступеневий зум', 'Широке поле зору', 'Компактний корпус', 'Стельове або настінне кріплення']
+  }
+};
+
+// ─── Product Lightbox ────────────────────────────────────────────────
+function initLightbox() {
+  const lightbox = document.getElementById('product-lightbox');
+  if (!lightbox) return;
+
+  const overlay = lightbox.querySelector('.lightbox__overlay');
+  const closeBtn = lightbox.querySelector('.lightbox__close');
+  const imgEl = lightbox.querySelector('.lightbox__image');
+  const brandEl = lightbox.querySelector('.lightbox__brand');
+  const nameEl = lightbox.querySelector('.lightbox__name');
+  const priceEl = lightbox.querySelector('.lightbox__price');
+  const descEl = lightbox.querySelector('.lightbox__description');
+  const featuresEl = lightbox.querySelector('.lightbox__features');
+  const linkEl = lightbox.querySelector('.lightbox__link');
+  const consultBtn = lightbox.querySelector('.lightbox__consult');
+
+  function openLightbox(productId) {
+    const product = PRODUCTS[productId];
+    if (!product) return;
+
+    imgEl.src = product.image;
+    imgEl.alt = product.name;
+    brandEl.textContent = product.brand;
+    nameEl.textContent = product.name;
+    priceEl.textContent = product.price;
+    descEl.textContent = product.description;
+    featuresEl.innerHTML = product.features.map(f => `<li>${f}</li>`).join('');
+    linkEl.href = product.url;
+
+    lightbox.classList.add('lightbox--open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+
+  // Open on "Детальніше" click
+  document.querySelectorAll('[data-lightbox]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(btn.dataset.lightbox);
+    });
+  });
+
+  // Close handlers
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('lightbox--open')) {
+      closeLightbox();
+    }
+  });
+
+  // Simple focus trap
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = lightbox.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Scroll to contact from lightbox
+  if (consultBtn) {
+    consultBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeLightbox();
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
+
+// ─── Product Filters ─────────────────────────────────────────────────
+function initFilters() {
+  const filtersContainer = document.querySelector('.microscopes__filters');
+  if (!filtersContainer) return;
+
+  const chips = filtersContainer.querySelectorAll('[data-filter]');
+  const cards = document.querySelectorAll('.microscopes__grid .product-card[data-brand]');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+
+      // Update active chip
+      chips.forEach(c => c.classList.remove('filter-chip--active'));
+      chip.classList.add('filter-chip--active');
+
+      // Show/hide cards
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.brand === filter) {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+          card.style.display = '';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            if (!chip.classList.contains('filter-chip--active') || chip.dataset.filter !== filter) return;
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
 // ─── Init Everything ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   setLang(currentLang);
@@ -231,6 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initMobileMenu();
   initHeaderScroll();
+  initLightbox();
+  initFilters();
 
   // Language toggle buttons
   document.querySelectorAll('[data-lang-toggle]').forEach(btn => {

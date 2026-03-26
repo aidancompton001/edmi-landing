@@ -1,5 +1,5 @@
 // EDMI Design Tokens
-// Source: docs/DESIGN_SYSTEM.md (verified from edmi.com.ua)
+// Source: docs/specs/DESIGN_SYSTEM.md (verified from edmi.com.ua)
 
 export const colors = {
   // Brand

@@ -63,7 +63,9 @@
       "maintenanceDesc": "Regular maintenance to extend the lifespan of your equipment",
       "consulting": "Selection Consulting",
       "consultingDesc": "We will help you choose a microscope for your tasks and budget"
-    }
+    },
+    "video_placeholder": "Service process video",
+    "video_hint": "A video review of our service will appear here soon"
   },
   "form": {
     "title": "Contact Us",

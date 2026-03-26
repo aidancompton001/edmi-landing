@@ -7,6 +7,161 @@
 
 ---
 
+### [S014] — 2026-03-26 — TZ-012: ROADMAP Variant A-Light (Prism Lite)
+
+**Роли:** #1 Viktor Schulz (формализация), #2 Elif Aydin (UX), #3 Tomasz Kowalski (Frontend), #8 Daniel Hartmann (координация), #14 Hans Landa (ревью)
+**Статус:** завершено
+
+**Что сделано:**
+- Создан ROADMAP: `docs/ROADMAP-VARIANT-A-LIGHT.md` — 7 фаз внедрения фиксов по фидбеку клиента
+- Обновлён TZ-012 с корректными контактами (подтверждено CEO: i18n данные)
+- Контакты: +38 (067) 000-24-67, office@edmi.dental, вул. Євгена Коновальця 229
+- Маппінг продуктів підтверджено CEO: PROergo = EXTARO 300 MORA interface
+- Фаза 5 (видео): плейсхолдер с иконкой play (CEO: "видео пока нет")
+- Hans Landa ревью: CONDITIONAL PASS → все блокеры сняты после подтверждения CEO
+- Скилл ui-ux-pro-max запущен, design system сгенерирован
+
+**Фазы роадмапа:**
+- Фаза 0: Реальные данные + конфиг (S)
+- Фаза 1: Лого EDMI + FAB кнопка (S)
+- Фаза 2: Фото товаров в карточках (M)
+- Фаза 3: Lightbox товара (M)
+- Фаза 4: Аксессуары — фото вместо иконок (M)
+- Фаза 5: Сервис — видео плейсхолдер (S)
+- Фаза 6: Фильтры микроскопов (S, nice-to-have)
+
+**Артефакты:**
+- `docs/ROADMAP-VARIANT-A-LIGHT.md` — новый файл
+- `docs/tz/TZ-012-variant-a-light-roadmap.md` — обновлён (контакты, фаза 5)
+
+> DEVLOG updated: S014
+
+### [S014.1] — 2026-03-26 — Фаза 0: Реальні дані + конфіг
+
+**Роль:** #3 Tomasz Kowalski (Frontend)
+**Статус:** завершено
+
+**Что сделано:**
+- Заменены все фейковые контакты: телефон, email, адрес (6 мест в HTML)
+- Заменены 4 цены: $45K/$28K/$38K/$22K → €31,737/€25,000/€39,643/€19,200
+- Соцсети: Instagram, Facebook, Telegram → реальные URL (0 placeholder href)
+- Добавлен график работы: Пн-Пт 9:00-17:00, Сб 10:00-13:00 (contact + footer)
+- Все тесты пройдены: build OK, 0 фейковых данных, все реальные данные на месте
+
+> DEVLOG updated: S014.1
+
+### [S014.2] — 2026-03-26 — Фаза 1: Лого EDMI + FAB кнопка
+
+**Роль:** #2 Elif Aydin (UX), #3 Tomasz Kowalski (Frontend)
+**Статус:** завершено
+
+**Что сделано:**
+- Скачаны SVG лого с edmi.com.ua: header (чёрный fill) + footer (белый fill)
+- Header: `<span>EDMI</span>` → `<img src="/images/edmi-logo-header.svg" alt="EDMI®">` — реальный логотип с ®
+- Footer: аналогично (чёрный лого — footer светлый)
+- FAB кнопка: 56px, #90267C, fixed bottom-right, иконка телефона, `tel:+380670002467`
+- CSS: hover scale 1.08, shadow, mobile адаптация (52px, bottom: 16px)
+- Build OK
+
+> DEVLOG updated: S014.2
+
+### [S014.3] — 2026-03-26 — Фаза 2: Фото товарів в карточках
+
+**Роль:** #3 Tomasz Kowalski (Frontend)
+**Статус:** завершено
+
+**Что сделано:**
+- 4 placeholder заменены на `<img>` с реальными фото из public/images/products/
+- EXTARO 300 → extaro-300-premium.png, Flexion → cj-optik-flexion-twin.jpg, PROergo → extaro-300-mora.png, Advanced → cj-optik-flexion-advanced.jpg
+- CSS: `object-fit: contain` + `background: #FFFFFF` — фото целые, не обрезаны
+- Badge "Новинка" сохранён (position: absolute внутри relative контейнера)
+- 0 placeholder осталось, 4 img, build OK
+
+> DEVLOG updated: S014.3
+
+### [S014.4] — 2026-03-26 — Фаза 3: Lightbox товару
+
+**Роль:** #3 Tomasz Kowalski (JS/CSS), #2 Elif Aydin (дизайн)
+**Статус:** завершено
+
+**Что сделано:**
+- JS: объект PRODUCTS с 4 продуктами (реальные описания 4-5 предложений, features, цены, URL)
+- JS: initLightbox() — открытие/закрытие, focus trap, scroll lock, Esc, overlay click
+- JS: guard `if (!lightboxEl) return` — безопасно для других вариантов
+- HTML: 4 кнопки "Детальніше" → data-lightbox вместо внешних ссылок
+- HTML: lightbox разметка с aria-modal, role="dialog"
+- CSS: overlay rgba(0,0,0,0.6), content max-width 800px, анимация scale+translate
+- CSS: mobile fullscreen, features grid 1fr, actions column
+- CTA "Отримати консультацію" → scroll to #contact + close lightbox
+- Link "Дивитись на edmi.com.ua" → внешнее посилання
+- Build OK, main.js 16.82 KB
+
+> DEVLOG updated: S014.4
+
+### [S014.5] — 2026-03-26 — Фаза 4: Аксесуари — фото замість іконок
+
+**Роль:** #2 Elif Aydin (підбір фото), #3 Tomasz Kowalski (код)
+**Статус:** завершено
+
+**Что сделано:**
+- 6 фото скачаны с edmi.com.ua: optics, lighting, cameras, mounts, covers, other
+- 6 SVG-иконок заменены на `<img>` с реальными фото продуктов
+- Убран `aria-hidden="true"`, добавлен `alt` на каждое фото
+- CSS: контейнер 72x72px, border-radius 16px, object-fit contain, белый фон
+- Build OK
+
+> DEVLOG updated: S014.5
+
+### [S014.6] — 2026-03-26 — Фаза 5+6: Відео плейсхолдер + Фільтри
+
+**Роль:** #3 Tomasz Kowalski (Frontend)
+**Статус:** завершено
+
+**Фаза 5 — Відео плейсхолдер:**
+- Секція під сервісними картками: 16:9 placeholder, іконка play, dashed border
+- Текст "Відео сервісного процесу" + підказка "Скоро тут з'явиться відеоогляд"
+- i18n ключі: service.video_placeholder, service.video_hint (uk + en)
+- max-width 720px, border-radius 16px, responsive
+
+**Фаза 6 — Фільтри мікроскопів:**
+- 3 чіпи: "Всі" / "Zeiss" / "CJ-Optik"
+- data-brand на 4 карточках (zeiss x2, cj-optik x2)
+- JS: initFilters() з guard, show/hide з opacity transition
+- CSS: pill-shape chips, active = gradient background
+- Build OK, main.js 17.76 KB
+
+> DEVLOG updated: S014.6
+
+---
+
+### [S013] — 2026-03-26 — TZ-011: Полная реорганизация структуры проекта
+
+**Роли:** #1 Marco Richter (ответственный), #14 Hans Landa (аудит)
+**Статус:** завершено
+
+**Что сделано:**
+- Полная реорганизация docs/ — создана структура specs/, tz/, plans/, adr/, assets/
+- Перемещены спеки: API_CONTRACTS, ARCHITECTURE, TECH_STACK, DESIGN_SYSTEM → `docs/specs/`
+- Перемещены бинарные ассеты: brandbook, presentation, ref → `docs/assets/`
+- 16 фоток в docs/ref/ переименованы: `photo_2026-02-11_15-09-XX.jpg` → `ref-NN-описание.jpg`
+- Удалены дубликаты: FOLDER_STRUCTURE.md (дублировал CLAUDE.md), PROGRESS.md (дублировал PHASES.md + DEVLOG)
+- CEO_PROMPTS.md и METRICS.md перемещены из корня в docs/
+- CLAUDE.md обновлён: таблица документации, секция Project Structure, все пути
+- Исправлена ссылка в `packages/shared/src/constants/theme.ts`
+- Коммит S008-S011 (все variant-d файлы были untracked — root cause проблем с деплоем)
+
+**Ключевые решения:**
+- Организация по типу документа (specs/tz/plans/adr/assets), не по домену — интуитивнее
+- scripts/ оставлена как отдельная папка (стандарт монорепо)
+- Фотки — UX-референсы из Rozetka, все 16 уникальны (нет дубликатов даже в "(2)" файлах)
+
+**Артефакты:**
+- `CLAUDE.md` — обновлённая документация и структура
+- `docs/specs/`, `docs/assets/` — новые директории
+- `docs/assets/ref/ref-01..ref-16-*.jpg` — переименованные референсы
+
+---
+
 ### [S012] — 2026-03-09 — Увольнение #8 Sven Lindqvist + фикс карточек с фото
 
 **Роли:** #1 Viktor Schulz (координация после увольнения #8), #2 Elif Aydin (UX), #3 Tomasz Kowalski (вёрстка), #14 Hans Landa (аудит)
